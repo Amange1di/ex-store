@@ -169,7 +169,7 @@ const Detail = () => {
                 display: "flex",
                 alignItems: "center",
                 maxWidth: "160px",
-                border: "1px solid red",
+                border: "1px solid #00000080",
               }}
             >
               <IconButton onClick={decrementQuantity}>
@@ -182,8 +182,8 @@ const Detail = () => {
                 style={{
                   minWidth: "5px",
                   textAlign: "center",
-                  borderRight: "1.5px solid red",
-                  borderLeft: "1.5px solid red",
+                  borderRight: "1.5px solid #00000080",
+                  borderLeft: "1.5px solid #00000080",
                   height: "40px",
                 }}
               />
@@ -206,7 +206,7 @@ const Detail = () => {
                 dispatch(addToLike(item));
               }}
               sx={{
-                border: "1px solid red",
+                border: "1px solid #00000080",
                 borderRadius: "5px",
                 marginLeft: "10px",
                 padding: "8px",

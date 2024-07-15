@@ -1,15 +1,34 @@
-import { Box, Button, Container, IconButton } from "@mui/material";
+import { Box, Breadcrumbs, Button, Container, IconButton } from "@mui/material";
 import { useDispatch, useSelector } from "react-redux";
 import { TiDelete } from "react-icons/ti";
 import { removeItem, updateQuantity } from "../../redux/slices/cartSlice";
 import { Link } from "react-router-dom";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { updateCart } from "../../redux/slices/cartSlice";
 
 const Cart = () => {
   const { items } = useSelector((state) => state.cart);
   const dispatch = useDispatch();
-  const total = items?.reduce((acc, item) => acc + item.price * item.quantity, 0) || 0;
+  const [couponCode, setCouponCode] = useState(""); // State for coupon code
+  const [discount, setDiscount] = useState(0); // State for discount
+  const subtotal = items?.reduce((acc, item) => acc + item.price * item.quantity, 0) || 0;
+  const total =  subtotal - (subtotal * discount);
+
+ 
+
+  const handleCouponChange = (e) => {
+    setCouponCode(e.target.value);
+  };
+
+  const handleCouponApply = () => {
+    // Replace with your actual coupon logic
+    if (couponCode === "www") {
+      setDiscount(0.1); // 10% discount
+    } else {
+      setDiscount(0);
+      alert("Invalid coupon code");
+    }
+  };
 
   useEffect(() => {
     dispatch(updateCart());
@@ -25,6 +44,18 @@ const Cart = () => {
 
   return (
     <div>
+      <Breadcrumbs aria-label="breadcrumb" style={{ margin: '80px 1200px 0px 135px' }}>
+        <Link underline="hover" color="#7F7F7F" to="/">
+          <p style={{ color: "#7F7F7F" }}>Home</p>
+        </Link>
+        <Link
+          underline="hover"
+          color="inherit"
+          to="/cart"
+        >
+          Cart
+        </Link>
+      </Breadcrumbs>
       <Container maxWidth="lg" sx={{ paddingTop: "180px" }}>
         <Box>
           <Box
@@ -131,10 +162,10 @@ const Cart = () => {
         <Box sx={{ display: "flex", justifyContent: "space-between", marginTop: "80px" }}>
           <Box sx={{ display: "flex", gap: "16px" }}>
             <div style={{ width: "300px", height: "56px", border: "1px solid #000", borderRadius: "4px", padding: "16px 5px 16px 24px" }}>
-              <input style={{ width: "100%", outline: "none" }} type="text" placeholder="coupon code" />
+              <input onChange={handleCouponChange} style={{ width: "100%", outline: "none" }} type="text" placeholder="coupon code" />
             </div>
             <div>
-              <Button
+              <Button onClick={handleCouponApply}
                 variant="outlined"
                 sx={{
                   padding: "16px 48px",
@@ -157,6 +188,14 @@ const Cart = () => {
             <Box sx={{ display: "flex", justifyContent: "space-between", paddingBottom: "16px", borderBottom: "1px solid #909090" }}>
               <p>Shipping</p>
               <p>free</p>
+            </Box>
+            <Box sx={{ display: 'flex', justifyContent: 'space-between' }}>
+              <p>Subtotal:</p>
+              <p style={{ marginBottom: '16px' }}>${subtotal}</p>
+            </Box>
+            <Box sx={{ display: 'flex', justifyContent: 'space-between' }}>
+              <p>Discount:</p>
+              <p style={{ marginBottom: '16px' }}>- ${subtotal * discount}</p>
             </Box>
             <Box sx={{ display: "flex", justifyContent: "space-between", padding: "16px 0", borderBottom: "1px solid #909090" }}>
               <p>Total:</p>

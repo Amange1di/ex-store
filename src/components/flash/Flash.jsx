@@ -1,11 +1,12 @@
 import React, { useState } from "react";
-import { Container, Button } from "@mui/material";
+import { Container, Button, Grid } from "@mui/material";
 import { useSelector } from "react-redux";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Card from "../card/Card";
 import { GoArrowLeft, GoArrowRight } from "react-icons/go";
+import ReactLoading from 'react-loading';
 
 const Flash = () => {
   const { items, categoryName } = useSelector((store) => store.products);
@@ -58,54 +59,54 @@ const Flash = () => {
     setShowAllProducts(false);
   };
 
-  if(items.length === 0){
-    return <h3>Load....</h3>
+  if (items.length === 0) {
+    return <p style={{display:"grid",alignItems:'center', justifyContent:'center'}}><ReactLoading color="#0000000"/> Loading...</p> 
   }
 
   return (
     <Container maxWidth="lg" sx={{ marginTop: "100px", padding: "0 20px" }}>
-      <h2 style={{ textAlign: "center" }}>{categoryName}</h2>
       {!showAllProducts ? (
         <>
-          <div
-            style={{ position: "absolute", right: "200px", marginTop: "-50px" }}
-          >
-            <Button
-              onClick={previousSlide}
-              style={{
-                padding: "0",
-                minWidth: "auto",
-                margin: "0 10px",
-                background: "rgba(245, 245, 245, 1)",
-                borderRadius: "50%",
-                width: "36px",
-                height: "46px",
-                color: "black",
-                fontSize: "22px",
-              }}
-            >
-              <GoArrowLeft />
-            </Button>
-            <Button
-              onClick={nextSlide}
-              style={{
-                padding: "0",
-                minWidth: "auto",
-                margin: "0 10px",
-                background: "rgba(245, 245, 245, 1)",
-                borderRadius: "50%",
-                width: "36px",
-                height: "46px",
-                color: "black",
-                fontSize: "22px",
-              }}
-            >
-              <GoArrowRight />
-            </Button>
-          </div>
+          <Grid container alignItems="center" justifyContent="space-between" position="relative">
+            <Grid item>
+              <h2 style={{ marginBottom: 0, fontSize: "36px", fontWeight: '600' }}>{categoryName}</h2>
+            </Grid>
+            <Grid item>
+              <Button
+                style={{
+                  padding: "0",
+                  minWidth: "auto",
+                  margin: "0 10px",
+                  background: "rgba(245, 245, 245, 1)",
+                  borderRadius: "50%",
+                  width: "36px",
+                  height: "46px",
+                  color: "black",
+                  fontSize: "22px",
+                }}
+                onClick={previousSlide} className="nav-button">
+                <GoArrowLeft />
+              </Button>
+              <Button
+                style={{
+                  padding: "0",
+                  minWidth: "auto",
+                  margin: "0 10px",
+                  background: "rgba(245, 245, 245, 1)",
+                  borderRadius: "50%",
+                  width: "36px",
+                  height: "46px",
+                  color: "black",
+                  fontSize: "22px",
+                }}
+                onClick={nextSlide} className="nav-button">
+                <GoArrowRight />
+              </Button>
+            </Grid>
+          </Grid>
           <Slider {...sliderSettings} ref={sliderRef}>
             {items.map((el) => (
-              <Card key={el?.id} el={el}  showDiscount={true} showRating={true} />
+              <Card key={el?.id} el={el} showDiscount={true} showRating={true} />
             ))}
           </Slider>
           <button

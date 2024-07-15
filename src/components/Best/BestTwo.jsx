@@ -69,7 +69,7 @@ const BestTwo = () => {
         <Grid container spacing={3} style={{ marginTop: '50px' }}>
           {randomItems.slice(0, Math.min(randomItems.length, 9)).map((el) => (
             <Grid item xs={4} key={el?.id}> {/* Предполагается, что каждый элемент занимает 1/3 ширины (4 колонки в сетке) */}
-              <Card el={el} />
+              <Card el={el} showDiscount={false} showRating={true} />
             </Grid>
           ))}
         </Grid>
