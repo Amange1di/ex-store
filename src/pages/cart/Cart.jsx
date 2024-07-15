@@ -1,10 +1,10 @@
+
 import { Box, Breadcrumbs, Button, Container, IconButton, Typography } from "@mui/material";
 import { useDispatch, useSelector } from "react-redux";
 import { TiDelete } from "react-icons/ti";
-import { removeItem, updateQuantity } from "../../redux/slices/cartSlice";
+import { removeItem, updateQuantity, updateCart } from "../../redux/slices/cartSlice";
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
-import { updateCart } from "../../redux/slices/cartSlice";
 
 const Cart = () => {
   const { items } = useSelector((state) => state.cart);
@@ -12,29 +12,31 @@ const Cart = () => {
   const [couponCode, setCouponCode] = useState(""); // State for coupon code
   const [discount, setDiscount] = useState(0); // State for discount
   const subtotal = items?.reduce((acc, item) => acc + item.price * item.quantity, 0) || 0;
-  const total =  subtotal - (subtotal * discount);
+  const total = subtotal - (subtotal * discount);
+
+  useEffect(() => {
+    dispatch(updateCart());
+  }, [dispatch]);
 
   if (items.length === 0) {
     return (
       <Typography variant="h5" align="center" sx={{ mt: "5px" }}>
-              <Breadcrumbs aria-label="breadcrumb" style={{ margin: '80px 1200px 0px 135px' }}>
-        <Link underline="hover" color="#7F7F7F" to="/">
-          <p style={{ color: "#7F7F7F" }}>Home</p>
-        </Link>
-        <Link
-          underline="hover"
-          color="inherit"
-          to="/cart"
-        >
-          Cart
-        </Link>
-      </Breadcrumbs>
+        <Breadcrumbs aria-label="breadcrumb" style={{ margin: '80px 1200px 0px 135px' }}>
+          <Link underline="hover" color="#7F7F7F" to="/">
+            <p style={{ color: "#7F7F7F" }}>Home</p>
+          </Link>
+          <Link
+            underline="hover"
+            color="inherit"
+            to="/cart"
+          >
+            Cart
+          </Link>
+        </Breadcrumbs>
         No Cards
       </Typography>
     );
   }
-
- 
 
   const handleCouponChange = (e) => {
     setCouponCode(e.target.value);
@@ -50,13 +52,9 @@ const Cart = () => {
     }
   };
 
-  useEffect(() => {
-    dispatch(updateCart());
-  }, [dispatch]);
-
   const handleRemoveItem = (id) => {
     dispatch(removeItem({ id }));
-  };
+  }
 
   const handleChangeQuantity = (id, quantity) => {
     dispatch(updateQuantity({ id, quantity: parseInt(quantity, 10) }));
@@ -128,7 +126,7 @@ const Cart = () => {
                 </IconButton>
                 <img
                   width={"54px"}
-                  src={item.images[0].replaceAll('["', "")}
+                  src={item.images[0].replaceAll('["', "").replaceAll('"]', "")}
                   alt="img"
                 />
                 <p style={{ width: "166px" }}>{item.title}</p>
