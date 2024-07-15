@@ -15,7 +15,7 @@ import { FaMinus, FaPlus } from "react-icons/fa";
 import { FaStar, FaStarHalfAlt, FaRegHeart } from "react-icons/fa";
 import { toast } from "react-toastify";
 import ReactLoading from 'react-loading';
-
+import { useTranslation } from "react-i18next";
 const Detail = () => {
   const { id } = useParams();
   const dispatch = useDispatch();
@@ -25,7 +25,8 @@ const Detail = () => {
   const [activeSize, setActiveSize] = useState("");
   const [circle, setCircle] = useState("");
   const [quantity, setQuantity] = useState(1);
-
+  
+  const { t, i18n } = useTranslation();
   useEffect(() => {
     dispatch(fetchProductById(id));
   }, [dispatch, id]);
@@ -118,7 +119,7 @@ const Detail = () => {
             variant="body"
             component={"p"}
           >
-            Цвета:{" "}
+           {t('Цвета')}  :{" "}
             {["#A0BCE0", "#E07575"].map((color) => (
               <span
                 onClick={() => setCircle(color)}
@@ -141,7 +142,7 @@ const Detail = () => {
             variant="body"
             component={"p"}
           >
-            Размеры:{" "}
+          {t('Размеры')}   :{" "}
             {["SX", "S", "M", "L", "XL"].map((size) => (
               <span
                 onClick={() => setActiveSize(size)}
@@ -205,7 +206,7 @@ const Detail = () => {
                 color: "#fff",
               }}
             >
-              Купить сейчас
+             {t(' Купить сейчас')} 
             </Button>
             <IconButton
               onClick={() => {
