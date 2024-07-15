@@ -15,6 +15,7 @@ import { FaArrowRight } from "react-icons/fa6";
 import apple_icon from "../../assets/apple_icon.svg";
 import { useDispatch } from "react-redux";
 import { fetchProductsByCategory } from "../../redux/slices/productsSlice";
+import { useTranslation } from "react-i18next";
 
 const fakeData = [
   {
@@ -40,6 +41,7 @@ const fakeData = [
 ];
 
 const Hero = () => {
+  const { t } = useTranslation()
   const [categories, setCategories] = useState([]);
   const dispatch = useDispatch();
   var settings = {
@@ -49,7 +51,7 @@ const Hero = () => {
     slidesToShow: 1,
     slidesToScroll: 1,
   };
-
+  
   useEffect(() => {
     const getCategories = async () => {
       const { data } = await storeService.getAllCategories();
@@ -81,7 +83,8 @@ const Hero = () => {
               <ListItem sx={{ cursor: "pointer" }} key={el.id}>
                 <ListItemText
                   onClick={() => handleListItemClick(el.id, el.name)}
-                  primary={`${el.name}`}
+                  primary={`${t(el.name)}`}
+                  // secondary={`${t(el.name)}`}
                 />
               </ListItem>
             ))}
