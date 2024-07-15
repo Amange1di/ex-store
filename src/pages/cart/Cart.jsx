@@ -1,4 +1,4 @@
-import { Box, Breadcrumbs, Button, Container, IconButton } from "@mui/material";
+import { Box, Breadcrumbs, Button, Container, IconButton, Typography } from "@mui/material";
 import { useDispatch, useSelector } from "react-redux";
 import { TiDelete } from "react-icons/ti";
 import { removeItem, updateQuantity } from "../../redux/slices/cartSlice";
@@ -13,6 +13,26 @@ const Cart = () => {
   const [discount, setDiscount] = useState(0); // State for discount
   const subtotal = items?.reduce((acc, item) => acc + item.price * item.quantity, 0) || 0;
   const total =  subtotal - (subtotal * discount);
+
+  if (items.length === 0) {
+    return (
+      <Typography variant="h5" align="center" sx={{ mt: "5px" }}>
+              <Breadcrumbs aria-label="breadcrumb" style={{ margin: '80px 1200px 0px 135px' }}>
+        <Link underline="hover" color="#7F7F7F" to="/">
+          <p style={{ color: "#7F7F7F" }}>Home</p>
+        </Link>
+        <Link
+          underline="hover"
+          color="inherit"
+          to="/cart"
+        >
+          Cart
+        </Link>
+      </Breadcrumbs>
+        No Cards
+      </Typography>
+    );
+  }
 
  
 
