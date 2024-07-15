@@ -6,7 +6,6 @@ import {
   Button,
   Container,
   IconButton,
-  Input,
   Typography,
 } from "@mui/material";
 import { fetchProductById } from "../../redux/slices/productsSlice";
@@ -30,7 +29,7 @@ const Detail = () => {
 
   useEffect(() => {
     if (item.images && item.images.length > 0) {
-      setCardImg(item.images[0]);
+      setCardImg(item.images[1]);
     }
   }, [item]);
 
