@@ -1,7 +1,6 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import HomePage from "../pages/home/HomePage";
 import Cart from "../pages/cart/Cart";
-
 import Detail from "../pages/detail/Detail";
 import CheckOut from "../pages/checkOut/CheckOut";
 import Favorite from "../pages/favorite/Favorite";
@@ -10,7 +9,6 @@ import About from "../pages/About";
 import NotFoundPage from "../pages/not-found-page/NotFounPage";
 import FormExample from "../pages/signUp/FormExample";
 import LoginExample from "../pages/signUp/LoginExample";
-
 import SignUp from "../pages/signUp/SignUp";
 import MyAccount from "../pages/MyAccount/MyAccount";
 import Profile from "../components/profile1/Profile";

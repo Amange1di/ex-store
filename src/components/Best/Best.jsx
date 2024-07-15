@@ -8,6 +8,7 @@ import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import Card from '../card/Card';
+import ReactLoading from "react-loading"
 
 const Best = () => {
   const dispatch = useDispatch();
@@ -67,7 +68,7 @@ const Best = () => {
       <Container maxWidth="lg" sx={{ marginTop: '100px', padding: '0 20px', position: 'relative' }}>
         <Typography variant="h4">Best Selling Products</Typography>
         <Typography variant="subtitle1" sx={{ marginTop: '20px' }}>
-          Загрузка...
+        <p style={{ display: "grid", alignItems: 'center', justifyContent: 'center' }}><ReactLoading color="#0000000" /> Loading...</p>
         </Typography>
       </Container>
     );

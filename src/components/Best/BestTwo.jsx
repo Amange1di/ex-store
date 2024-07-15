@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { getAllProducts } from '../../redux/slices/allproduct';
 import { Container, Button, Typography, Grid } from '@mui/material'; // Импорт Grid из MUI для создания сетки
 import Card from '../card/Card';
+import ReactLoading from "react-loading"
 
 const BestTwo = () => {
   const dispatch = useDispatch();
@@ -35,7 +36,7 @@ const BestTwo = () => {
       <Container maxWidth="lg" sx={{ marginTop: '100px', padding: '0 20px', position: 'relative' }}>
         <Typography variant="h4">Лучшие продажи</Typography>
         <Typography variant="subtitle1" sx={{ marginTop: '20px' }}>
-          Загрузка...
+        <p style={{ display: "grid", alignItems: 'center', justifyContent: 'center' }}><ReactLoading color="#0000000" /> Loading...</p>
         </Typography>
       </Container>
     );

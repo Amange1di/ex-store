@@ -14,12 +14,13 @@ import { addItem } from "../../redux/slices/cartSlice";
 import { FaMinus, FaPlus } from "react-icons/fa";
 import { FaStar, FaStarHalfAlt, FaRegHeart } from "react-icons/fa";
 import { toast } from "react-toastify";
+import ReactLoading from 'react-loading';
 
 const Detail = () => {
   const { id } = useParams();
   const dispatch = useDispatch();
   const { item } = useSelector((state) => state.products);
-  console.log(item,'----item----');
+  console.log(item, '----item----');
   const [cardImg, setCardImg] = useState("");
   const [activeSize, setActiveSize] = useState("");
   const [circle, setCircle] = useState("");
@@ -36,7 +37,7 @@ const Detail = () => {
   }, [item]);
 
   if (Object.keys(item).length === 0) {
-    return <h3>Загрузка...</h3>;
+    return <p style={{ display: "grid", alignItems: 'center', justifyContent: 'center' }}><ReactLoading color="#0000000" /> Loading...</p>
   }
 
   const { title, images, price, description } = item;
