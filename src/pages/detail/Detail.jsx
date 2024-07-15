@@ -6,13 +6,14 @@ import {
   Button,
   Container,
   IconButton,
-  Input,
   Typography,
 } from "@mui/material";
 import { fetchProductById } from "../../redux/slices/productsSlice";
 import { addToLike } from "../../redux/slices/likeSlice";
+import { addItem } from "../../redux/slices/cartSlice";
 import { FaMinus, FaPlus } from "react-icons/fa";
 import { FaStar, FaStarHalfAlt, FaRegHeart } from "react-icons/fa";
+import { toast } from "react-toastify";
 
 const Detail = () => {
   const { id } = useParams();
@@ -30,7 +31,7 @@ const Detail = () => {
 
   useEffect(() => {
     if (item.images && item.images.length > 0) {
-      setCardImg(item.images[0]);
+      setCardImg(item.images[1]);
     }
   }, [item]);
 
@@ -192,7 +193,10 @@ const Detail = () => {
                 <FaPlus />
               </IconButton>
             </Box>
-            <Button
+            <Button onClick={() => {
+              dispatch(addItem(item))
+              toast("Добавлено в карзину")
+            }}
               variant="contained"
               sx={{
                 minWidth: "185px",
@@ -205,6 +209,7 @@ const Detail = () => {
             <IconButton
               onClick={() => {
                 dispatch(addToLike(item));
+                toast.success("Item added to favorite");
               }}
               sx={{
                 border: "1px solid #00000080",
