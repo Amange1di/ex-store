@@ -30,9 +30,11 @@ const cartSlice = createSlice({
         saveToLocal(state.items);
       }
     },
-    updateCart(state) {
-      const items = localStorage.getItem("cart") ? JSON.parse(localStorage.getItem("cart")) : [];
-      state.items = items;
+    updateCart(state, action) {
+      const storedItems = JSON.parse(localStorage.getItem('cart'));
+      if (storedItems) {
+        state.items = storedItems;
+      }
     },
   },
 });

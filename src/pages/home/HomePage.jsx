@@ -13,7 +13,6 @@ const HomePage = () => {
     <div>
       <Hero/>
       <Flash/>
-      
       <CategoriesSection/>
      <Best/>
       <Experience/>

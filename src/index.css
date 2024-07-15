@@ -4,42 +4,61 @@
 @tailwind components;
 @tailwind utilities;
 
-body{
+body {
   font-family: "Poppins", sans-serif;
 }
-*{
+
+* {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
 }
-a{
+
+a {
   text-decoration: none !important;
   color: #000;
 }
-button{
+
+button {
   border: none;
   cursor: pointer;
 }
-input{
+
+input {
   outline: none;
   border: none;
 }
 
-.Cart:hover >.btnCart{
+.Cart:hover>.btnCart {
   display: flex !important;
 }
+
 
 .slick-dots {
   display: flex !important;
-  gap: 10px !important;
-  justify-content: center !important;
-
+  gap: 20px;
+  justify-content: center;
+  bottom: 10px;
 }
-.slick-dots button{
-  width: 12px !important;
-  height: 12px !important;
+
+.slick-dots button {
+  width: 20px !important;
   border-radius: 50% !important;
-  background: #000 !important;
-  color: rgb(183, 20, 20) !important;
-  display: flex ;
+  background-color: #FFFFFF !important;
+}
+
+.slick-dots li button:before {
+  color: #FFFFFF;
+}
+
+.slick-dots li.slick-active button:before {
+  color: #ea1f1f;
+  font-size: 17px;
+  margin-top: 1.7px;
+}
+
+
+.blocke:hover {
+  background: #DB4444;
+  color: #FFFFFF;
 }

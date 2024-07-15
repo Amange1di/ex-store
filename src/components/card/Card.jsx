@@ -16,6 +16,7 @@ import { addToLike, removeFromLike } from "../../redux/slices/likeSlice";
 import { toast } from "react-toastify";
 import { RiDeleteBinLine } from "react-icons/ri";
 import { useNavigate } from "react-router-dom";
+import { useMemo } from "react";
 
 const def_Img = "https://mui.com/static/images/cards/paella.jpg";
 
@@ -25,7 +26,13 @@ const Card = ({ el, showDiscount, showRating }) => {
   const navigate = useNavigate();
   const discount = 30; // скидка
   const discountPrice = price - (price * discount) / 100;
-  const randomRating = Math.floor(Math.random() * 100) + 1;
+
+  // Определение randomRating с помощью useMemo
+  const randomRating = useMemo(() => Math.floor(Math.random() * 100) + 1, []);
+
+  // Сохранение вычисленного значения ratingValue с использованием useMemo
+  const ratingValue = useMemo(() => 3 * randomRating, [randomRating]);
+
 
   const handleClick = (id) => {
     navigate(`/detail/${id}`);
@@ -196,7 +203,7 @@ const Card = ({ el, showDiscount, showRating }) => {
               <FaStar />
               <FaStarHalfAlt />
               <b style={{ marginLeft: "20px", color: "grey" }}>
-                ({3 * randomRating})
+             ({ratingValue})
               </b>
             </Box>
           )}

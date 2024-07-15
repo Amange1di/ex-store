@@ -6,19 +6,21 @@ import {
   Button,
   Container,
   IconButton,
-  Input,
   Typography,
 } from "@mui/material";
 import { fetchProductById } from "../../redux/slices/productsSlice";
 import { addToLike } from "../../redux/slices/likeSlice";
+import { addItem } from "../../redux/slices/cartSlice";
 import { FaMinus, FaPlus } from "react-icons/fa";
 import { FaStar, FaStarHalfAlt, FaRegHeart } from "react-icons/fa";
+import { toast } from "react-toastify";
+import ReactLoading from 'react-loading';
 
 const Detail = () => {
   const { id } = useParams();
   const dispatch = useDispatch();
   const { item } = useSelector((state) => state.products);
-  console.log(item,'----item----');
+  console.log(item, '----item----');
   const [cardImg, setCardImg] = useState("");
   const [activeSize, setActiveSize] = useState("");
   const [circle, setCircle] = useState("");
@@ -30,12 +32,12 @@ const Detail = () => {
 
   useEffect(() => {
     if (item.images && item.images.length > 0) {
-      setCardImg(item.images[0]);
+      setCardImg(item.images[1]);
     }
   }, [item]);
 
   if (Object.keys(item).length === 0) {
-    return <h3>Загрузка...</h3>;
+    return <p style={{ display: "grid", alignItems: 'center', justifyContent: 'center' }}><ReactLoading color="#0000000" /> Loading...</p>
   }
 
   const { title, images, price, description } = item;
@@ -170,7 +172,7 @@ const Detail = () => {
                 display: "flex",
                 alignItems: "center",
                 maxWidth: "160px",
-                border: "1px solid red",
+                border: "1px solid #00000080",
               }}
             >
               <IconButton onClick={decrementQuantity}>
@@ -183,8 +185,8 @@ const Detail = () => {
                 style={{
                   minWidth: "5px",
                   textAlign: "center",
-                  borderRight: "1.5px solid red",
-                  borderLeft: "1.5px solid red",
+                  borderRight: "1.5px solid #00000080",
+                  borderLeft: "1.5px solid #00000080",
                   height: "40px",
                 }}
               />
@@ -192,7 +194,10 @@ const Detail = () => {
                 <FaPlus />
               </IconButton>
             </Box>
-            <Button
+            <Button onClick={() => {
+              dispatch(addItem(item))
+              toast("Добавлено в карзину")
+            }}
               variant="contained"
               sx={{
                 minWidth: "185px",
@@ -205,9 +210,10 @@ const Detail = () => {
             <IconButton
               onClick={() => {
                 dispatch(addToLike(item));
+                toast.success("Item added to favorite");
               }}
               sx={{
-                border: "1px solid red",
+                border: "1px solid #00000080",
                 borderRadius: "5px",
                 marginLeft: "10px",
                 padding: "8px",
