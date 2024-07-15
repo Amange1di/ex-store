@@ -33,7 +33,7 @@ export default function FormExample({ setIsSuccess }) {
     };
 
     return (
-        <Container maxWidth="lg" sx={{ display: "flex", justifyContent: "space-between" }}>
+        <Container maxWidth="lg" sx={{ display: "flex", justifyContent: "space-between", marginTop:"60px", marginLeft:"-25px"}}>
             <img style={{ width: "650px" }} src={SideImage} alt="" />
             <div>
                 <h2 style={{ fontSize: "36px", fontWeight: "500" }}>Create an account</h2>
