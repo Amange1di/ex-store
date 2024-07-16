@@ -6,9 +6,7 @@ import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import "./App.css";
 import { useTranslation } from "react-i18next";
-import {setUser} from "./redux/slices/userSlice"
-import { useEffect } from "react";
-import { useDispatch } from "react-redux";
+
 
 
 const App = () => {
