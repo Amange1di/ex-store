@@ -2,8 +2,10 @@ import { Box, Container, Typography } from "@mui/material";
 
 import { BsTelephone } from "react-icons/bs";
 import { RxEnvelopeClosed } from "react-icons/rx";
-
+import { useTranslation } from "react-i18next";
 const Contact = () => {
+    
+const { t, i18n } = useTranslation();
   return (
     <div>
       <Container maxWidth="lg" sx={{display:"flex", gap:"30px", marginTop:"80px"}}>
@@ -38,7 +40,7 @@ const Contact = () => {
               >
                 <BsTelephone />
               </div>
-              <p style={{ fontWeight: "500" }}>Call To Us</p>
+              <p style={{ fontWeight: "500" }}>{t('Call To Us')}</p>
             </div>
             <Typography
               sx={{
@@ -49,7 +51,7 @@ const Contact = () => {
               }}
               component={"p"}
             >
-              We are available 24/7, 7 days a week.
+             {t('We are available 24/7, 7 days a week.')} 
             </Typography>
             <Typography
               sx={{
@@ -61,7 +63,7 @@ const Contact = () => {
               }}
               component={"p"}
             >
-              Phone: +8801611112222
+             {t('Phone: +8801611112222')} 
             </Typography>
           </div>
 
@@ -88,7 +90,7 @@ const Contact = () => {
               >
                 <RxEnvelopeClosed />
               </div>
-              <p style={{ fontWeight: "500" }}>Write To US</p>
+              <p style={{ fontWeight: "500" }}>{t('Write To US')}</p>
             </div>
             <Typography
               sx={{
@@ -99,7 +101,7 @@ const Contact = () => {
               }}
               component={"p"}
             >
-              Fill out our form and we will contact you within 24 hours.
+             {t(' Fill out our form and we will contact you within 24 hours.')}
             </Typography>
             <Typography
               sx={{
@@ -110,13 +112,13 @@ const Contact = () => {
               }}
               component={"p"}
             >
-              Emails: customer@exclusive.com
+            {t('Emails: customer@exclusive.com')}   
             </Typography>
             <Typography
               sx={{ fontSize: "14px", fontWeight: "400", lineHeight: "21px" }}
               component={"p"}
             >
-              Emails: support@exclusive.com
+            {t('Emails: support@exclusive.com')}   
             </Typography>
           </div>
         </Box>
@@ -179,7 +181,7 @@ const Contact = () => {
 />
 
 <div style={{display:"flex", justifyContent:"end"}}>
-<button style={{padding:"16px 48px", background:"#DB4444", color:"#fff", borderRadius:"4px", textAlign:"right"}}>Send Massage</button>
+<button style={{padding:"16px 48px", background:"#DB4444", color:"#fff", borderRadius:"4px", textAlign:"right"}}>{t('Send Massage')} </button>
 </div>
 
         </Box>

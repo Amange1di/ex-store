@@ -1,14 +1,81 @@
 {
     "Home": "Главная",
-    "Contact": "Контакты",
+    "Contact":"Контакты",
     "About": " О нас",
     "Sign Up": "Регистрация",
-    "Our story": "Наша история",
+    "What are you looking for?":"Что ты ищешь?",
+    "Our story":"Наша история",
     "Launched in 2015, Exclusive is South Asia’s premier online shopping marketplace with an active presence in Bangladesh. Supported by a wide range of tailored marketing, data, and service solutions, Exclusive has 10,500 sellers and 300 brands and serves 3 million customers across the region.": "Exclusive, запущенный в 2015 году, является ведущим онлайн-магазином Южной Азии, активно работающим в Бангладеш. Компания Exclusive, поддерживаемая широким спектром специализированных маркетинговых решений, данных и сервисных услуг, насчитывает 10 500 продавцов и 300 брендов и обслуживает 3 миллиона клиентов по всему региону.",
     "Exclusive offers more than 1 million products, growing rapidly. It provides a diverse assortment in categories ranging from consumer goods to electronics.": "Ассортимент Exclusive насчитывает более 1 миллиона наименований и быстро растет. Он предлагает широкий ассортимент в различных категориях - от потребительских товаров до электроники.",
+
+    "Add To Cart":"Добавить в Корзину",
+    "Clothes":"Одежда",
+    "Shoes":"Обувь",
+    "Electronics":"Электроника",
+    "Furniture":"Мебель",
+    "Miscellaneous":"Разнообразный",
+    "category one":"первая категория",
+    "Testing Category":"Категория тестирования",
+    
+    "Classic Olive Chino Shorts":"Классические шорты-чино оливкового цвета",
+    "Elevate your casual wardrobe with these classic olive chino shorts. Designed for comfort and versatility, they feature a smooth waistband, practical pockets, and a tailored fit that makes them perfect for both relaxed weekends and smart-casual occasions. The durable fabric ensures they hold up throughout your daily activities while maintaining a stylish look.":"Дополните свой повседневный гардероб этими классическими шортами-чино оливкового цвета. Разработанные с учетом комфорта и универсальности, они имеют гладкий пояс, практичные карманы и индивидуальный крой, что делает их идеальными как для спокойных выходных, так и для мероприятий в стиле smart casual. Прочная ткань гарантирует, что они будут хорошо держаться на протяжении всей вашей повседневной деятельности, сохраняя при этом стильный внешний вид.",
+
+    "Stylish Red & Silver Over-Ear Headphone":"Стильные красно-серебристые наушники-вкладыши",
+    "Immerse yourself in superior sound quality with these sleek red and silver over-ear headphones. Designed for comfort and style, the headphones feature cushioned ear cups, an adjustable padded headband, and a detachable red cable for easy storage and portability. Perfect for music lovers and audiophiles who value both appearance and audio fidelity.":"Насладитесь превосходным качеством звука в этих элегантных красно-серебристых наушниках-вкладышах. Разработанные для обеспечения комфорта и стиля, наушники оснащены мягкими амбушюрами, регулируемым оголовьем с мягкой подкладкой и съемным красным кабелем для удобства хранения и переноски. Идеально подходит для любителей музыки и меломанов, которые ценят как внешний вид, так и качество звука.",
+   
+    "Sleek Modern Leather Sofa":"Элегантный современный кожаный диван",
+    "Enhance the elegance of your living space with our Sleek Modern Leather Sofa. Designed with a minimalist aesthetic, it features clean lines and a luxurious leather finish. The robust metal legs provide stability and support, while the plush cushions ensure comfort. Perfect for contemporary homes or office waiting areas, this sofa is a statement piece that combines style with practicality.":"Подчеркните элегантность вашего жилого пространства с помощью нашего элегантного современного кожаного дивана. Дизайн выполнен в стиле минимализма, он отличается четкими линиями и роскошной кожаной отделкой. Прочные металлические ножки обеспечивают устойчивость и поддержку, а мягкие подушки - комфорт. Этот диван, идеально подходящий для современных домов или офисных залов ожидания, представляет собой эффектное изделие, сочетающее в себе стиль и практичность.",
+    "Mid-Century Modern Wooden Dining Table":"Современный деревянный обеденный стол середины века",
+    "Elevate your dining room with this sleek Mid-Century Modern dining table, featuring an elegant walnut finish and tapered legs for a timeless aesthetic. Its sturdy wood construction and minimalist design make it a versatile piece that fits with a variety of decor styles. Perfect for intimate dinners or as a stylish spot for your morning coffee.":"Украсьте свою столовую этим элегантным обеденным столом середины века в современном стиле с элегантной отделкой из орехового дерева и заостренными ножками, создающими неподвластную времени эстетику. Прочная деревянная конструкция и минималистичный дизайн делают его универсальным предметом интерьера, который сочетается с различными стилями декора. Идеально подходит для интимных ужинов или как стильное место для утреннего кофе.",
+    "Elegant Golden-Base Stone Top Dining Table":"Элегантный обеденный стол с каменной столешницей на золотой основе",
+    "Elevate your dining space with this luxurious table, featuring a sturdy golden metal base with an intricate rod design that provides both stability and chic elegance. The smooth stone top in a sleek round shape offers a robust surface for your dining pleasure. Perfect for both everyday meals and special occasions, this table easily complements any modern or glam decor.":"Украсьте свое обеденное пространство с помощью этого роскошного стола с прочным основанием из золотистого металла и замысловатым узором в виде розы, который обеспечивает устойчивость и элегантность. Столешница из гладкого камня округлой формы обеспечивает надежную поверхность для получения удовольствия от трапезы. Идеально подходящий как для повседневных трапез, так и для особых случаев, этот стол легко дополнит любой современный или гламурный интерьер.",
+    "Modern Elegance Teal Armchair":"Современное элегантное бирюзовое кресло",
+    "Elevate your living space with this beautifully crafted armchair, featuring a sleek wooden frame that complements its vibrant teal upholstery. Ideal for adding a pop of color and contemporary style to any room, this chair provides both superb comfort and sophisticated design. Perfect for reading, relaxing, or creating a cozy conversation nook.":"Украсьте свое жилое пространство с помощью этого прекрасно выполненного кресла с изящной деревянной рамой, которая дополняет его яркую бирюзовую обивку. Это кресло идеально подходит для придания яркости и современного стиля любому помещению, обеспечивая одновременно превосходный комфорт и изысканный дизайн. Идеально подходит для чтения, отдыха или создания уютного уголка для бесед.",
+    
+    "Futuristic Holographic Soccer Cleats":"Футуристические голографические футбольные бутсы",
+    "Step onto the field and stand out from the crowd with these eye-catching holographic soccer cleats. Designed for the modern player, these cleats feature a sleek silhouette, lightweight construction for maximum agility, and durable studs for optimal traction. The shimmering holographic finish reflects a rainbow of colors as you move, ensuring that you'll be noticed for both your skills and style. Perfect for the fashion-forward athlete who wants to make a statement.":"Футуристические голографические футбольные бутсы",
+    "Rainbow Glitter High Heels":"Высокие каблуки с радужным блеском",
+    "Step into the spotlight with these eye-catching rainbow glitter high heels. Designed to dazzle, each shoe boasts a kaleidoscope of shimmering colors that catch and reflect light with every step. Perfect for special occasions or a night out, these stunners are sure to turn heads and elevate any ensemble":"Будьте в центре внимания в этих эффектных туфлях на высоком каблуке с радужным блеском. Каждая обувь, созданная для того, чтобы ослеплять, может похвастаться калейдоскопом мерцающих цветов, которые улавливают и отражают свет при каждом шаге. Идеально подходящие для особых случаев или вечернего выхода, эти сногсшибательные модели обязательно вскружат головы и украсят любой ансамбль.",
+    "Chic Summer Denim Espadrille Sandals":"Шикарные летние джинсовые сандалии-эспадрильи",
+    "Step into summer with style in our denim espadrille sandals. Featuring a braided jute sole for a classic touch and adjustable denim straps for a snug fit, these sandals offer both comfort and a fashionable edge. The easy slip-on design ensures convenience for beach days or casual outings":"Стильно шагните в лето в наших джинсовых сандалиях-эспадрильях. Классические босоножки с плетеной подошвой из джута и регулируемыми ремешками из денима для плотной посадки обеспечивают комфорт и модную посадку. Легкая конструкция без застежки обеспечивает удобство для пляжных дней или повседневных прогулок",
+    "Vibrant Runners: Bold Orange & Blue Sneakers":"Яркие кроссовки: Яркие оранжевые и синие кроссовки",
+    "Step into style with these eye-catching sneakers featuring a striking combination of orange and blue hues. Designed for both comfort and fashion, these shoes come with flexible soles and cushioned insoles, perfect for active individuals who don't compromise on style. The reflective silver accents add a touch of modernity, making them a standout accessory for your workout or casual wear":"Почувствуйте себя стильно в этих привлекательных кроссовках, выполненных в ярком сочетании оранжевого и синего оттенков. Разработанные для удобства и моды, эти кроссовки с гибкой подошвой и мягкими стельками идеально подходят для активных людей, которые не идут на компромисс в вопросах стиля. Светоотражающие серебристые вставки придают изделию нотку современности, что делает его отличным аксессуаром для тренировок или повседневной одежды.",
+   
+    "View All Products":"Просмотреть все продукты",
+
+    "Phones":"Телефоны",
+    "Computers":"Компьютеры",
+    "SmartWatch":"Умные часы",
+    "Headphones":"Наушники",
+    "Gaming":"Игровой",
+    "Cameras":"Камеры",
+
+    "Ourstory":"Наша история",
+    "Launched in 2015, Exclusive is South Asia’s premier online shopping marketplace with an active presence in Bangladesh. Supported by a wide range of tailored marketing, data, and service solutions, Exclusive has 10,500 sellers and 300 brands and serves 3 million customers across the region":"Exclusive, запущенный в 2015 году, является ведущим онлайн-магазином Южной Азии с активным представительством в Бангладеш. Благодаря широкому спектру специализированных маркетинговых решений, данных и сервисных услуг, Exclusive объединяет 10 500 продавцов и 300 брендов и обслуживает 3 миллиона клиентов по всему региону.",
+    "Exclusive offers more than 1 million products, growing rapidly. It provides a diverse assortment in categories ranging from consumer goods toelectronics.":"Ассортимент Exclusive насчитывает более 1 миллиона наименований и быстро растет. Он предлагает широкий ассортимент в различных категориях - от потребительских товаров до электроники.",
+
+    "Create an account":"Создать учетную запись",
+    "Enter your details below":"Введите свои данные ниже",
+    "Username":"Имя пользователя",
+    "Email address":"Адрес электронной почты",
+    "Password":"Пароль",
+    "User avatar":"Аватар пользователя",
+    "Register":"Зарегистрировать",
+    "Already have account":"xУ вас уже есть учетная запись",
+
+    "Login":"Авторизоваться",
+    "Log in to Exclusive":"Войдите в эксклюзивный",
+    "Enter your detailsbelow":"Введите свои данные ниже",
+    "Email addres":"Адрес электронной почты",
+    "Passwordd":"Пароль",
+    "Forgot password?":"Забыли пароль?",
+    "Sign in":"Регистрироваться",
+    "Registration":"Регистрация"    
+,
     " Add To Cart":" Добавить в Корзину",
     "Sallers active our site" : "Продавцы активны на нашем сайте",
     "Mopnthly Produduct Sale" : "Ежемесячная продажа продукта",
     "Customer active in our site" : "Клиент, активный на нашем сайте",
     "Anual gross sale in our site" : "Ежегодная валовая продажа на нашем сайте"
 }
+
