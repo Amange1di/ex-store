@@ -37,7 +37,7 @@ const { t, i18n } = useTranslation();
           <div className="w-full sm:w-auto">
             <h4 className="text-white text-2xl">{t('Support')} </h4>
             <p className="text-white mt-4">
-            {t(' 111 Bijoy Sarani, Dhaka, <br /> DH 1515, Bangladesh.')}  
+            111 Bijoy Sarani, Dhaka, <br /> DH 1515, Bangladesh.  
             </p>
             <p className="text-white mt-1"> exclusive@gmail.com</p>
             <p className="text-white mt-1"> +88015-88888-9999</p>

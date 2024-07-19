@@ -20,6 +20,8 @@ import { useMemo } from "react";
 
 const def_Img = "https://mui.com/static/images/cards/paella.jpg";
 
+const a  = "\\"
+
 const Card = ({ el, showDiscount, showRating }) => {
   const { title, images, price, id } = el;
   const dispatch = useDispatch();
@@ -41,7 +43,7 @@ const Card = ({ el, showDiscount, showRating }) => {
   return (
     <MuiCard
       className="Cart"
-      sx={{ margin: "20px", position: "relative", maxWidth: 270 }}
+      sx={{ margin: "20px", position: "relative", width: 270 }}
     >
       <Box
         sx={{
@@ -127,7 +129,7 @@ const Card = ({ el, showDiscount, showRating }) => {
   component="img"
   height="250 "
   width="270"
-  image={images.length > 0 ? images[0].replace(/[\["\]]/g, '') : def_Img}
+  image={images.length > 0 ? images[0].replace("[\\]", '') : def_Img}
   alt={title}
   sx={{ zIndex: 1 }}
 />

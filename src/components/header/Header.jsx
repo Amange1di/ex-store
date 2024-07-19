@@ -167,11 +167,14 @@ const Header = () => {
             sx={{
               flexGrow: 1,
               gap: "48px",
+              
               display: { xs: "none", md: "flex" },
             }}
           >
             {headerMenu.map((page) => (
-              <Link component={"a"} to={page.path} color="#000" key={page.name}>
+              <Link  style ={{
+                // width:"90px",
+                }}component={"a"} to={page.path} color="#000" key={page.name}>
                 {t(page.name)}
               </Link>
             ))}

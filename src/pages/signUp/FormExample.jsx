@@ -34,7 +34,7 @@ export default function FormExample({ setIsSuccess }) {
   
     const { t, i18n } = useTranslation();
     return (
-        <Container maxWidth="lg" sx={{ display: "flex", justifyContent: "space-between", marginTop:"60px", marginLeft:"-25px"}}>
+        <Container className="container" sx={{ display: "flex", justifyContent: "space-between", margin:"60px auto"}}>
             <img style={{ width: "650px" }} src={SideImage} alt="" />
             <div>
                 <h2 style={{ fontSize: "36px", fontWeight: "500" }}>{t('Create an account')} </h2>
