@@ -34,6 +34,7 @@ const Header = () => {
   const dispatch = useDispatch();
   const { items: likeItems } = useSelector((store) => store.like);
   const [userBlockOpen, setUserBlockOpen] = useState(false);
+  
 
   useEffect(() => {
     const user = JSON.parse(localStorage.getItem("user"));
@@ -201,7 +202,8 @@ const Header = () => {
                 }}
                 onClick={handleUserBlockToggle}
               >
-                <VscAccount />
+                {/* <VscAccount /> */}
+                <img style={{width:'30px', height:"30px", borderRadius:'50%'}} src={user?.avatar} alt="" />
                 {userBlockOpen && (
                   <Box
                     sx={{
