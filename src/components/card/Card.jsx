@@ -127,9 +127,9 @@ const Card = ({ el, showDiscount, showRating }) => {
       /> */}
       <CardMedia
   component="img"
-  height="250 "
+  height="270"
   width="270"
-  image={images.length > 0 ? images[0].replace("[\\]", '') : def_Img}
+  image={images.length > 0 ? images[0].replaceAll("[", '') : def_Img}
   alt={title}
   sx={{ zIndex: 1 }}
 />
