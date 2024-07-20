@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { getAllProducts } from '../../redux/slices/allproduct';
-import { Container, Button, Typography, Grid } from '@mui/material'; // Импорт Grid из MUI для создания сетки
+import { Container, Button, Typography, Grid } from '@mui/material'; 
 import Card from '../card/Card';
 import ReactLoading from "react-loading"
 

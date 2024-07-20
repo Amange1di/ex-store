@@ -4,7 +4,7 @@ import Expe from "../../assets/Experience.png";
 
 const Experience = () => {
     const calculateTimeLeft = () => {
-        const difference = +new Date("2024-07-19") - +new Date();
+        const difference = +new Date("2024-07-25T17:00") - +new Date();
         let timeLeft = {};
 
         if (difference > 0) {
@@ -86,14 +86,14 @@ const Experience = () => {
                     }}>
                         {timerComponents.length ? timerComponents : <span>Time's up!</span>}
                     </div>
-                    <button style={{
+                    {/* <button style={{
                         marginTop:"40px",
                         padding: "10px 35px",
                         color: "#fff",
                         background: "rgba(0, 255, 102, 1)",
                         fontSize: "16px",
                         fontWeight: "600"
-                    }}>Buy Now!</button>
+                    }}>Buy Now!</button> */}
                 </div>
                 <img src={Expe} alt="Experience" />
             </div>

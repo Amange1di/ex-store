@@ -141,18 +141,7 @@ const Hero = () => {
                   >
                     {promo.sale}
                   </Typography>
-                  <Typography
-                    className="flex items-center"
-                    sx={{
-                      marginLeft: "64px",
-                      borderBottom: "1px solid #FAFAFA",
-                      color: "#fff",
-                      width: "100px",
-                    }}
-                    component={"a"}
-                  >
-                    Shop Now <FaArrowRight className="ml-2" />
-                  </Typography>
+                  
                 </Box>
               </div>
             ))}

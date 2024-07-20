@@ -6,6 +6,7 @@ import { Link, useNavigate } from "react-router-dom";
 import SideImage from "../../assets/sign-up-fon.png";
 import { loginUser } from "../../redux/slices/userSlice";
 import { useEffect } from "react";
+import { Container } from "@mui/material";
 
 export default function LoginExample() {
   const dispatch = useDispatch();
@@ -29,7 +30,7 @@ export default function LoginExample() {
   
   const { t, i18n } = useTranslation();
   return (
-    <div className="container m-auto flex" style={{marginTop:"60px"}}>
+    <Container className="container" sx={{ display: "flex", justifyContent: "space-between", margin:"60px auto"}}>
       <img style={{ width: "650px" }} src={SideImage} alt="Side Image" />
       <div className="flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8">
         <div className="sm:mx-auto sm:w-full sm:max-w-sm">
@@ -60,7 +61,7 @@ export default function LoginExample() {
                   type="email"
                   autoComplete="email"
                   required
-                  placeholder="Email or Phone Number"
+                  placeholder="Email"
                 />
               </div>
             </div>
@@ -112,6 +113,6 @@ export default function LoginExample() {
           </p>
         </div>
       </div>
-    </div>
+    </Container >
   );
 }

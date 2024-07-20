@@ -191,7 +191,7 @@ const CheckOut = () => {
               <p style={{ }}>{t('Cash on delivery')} </p>
             </Box>
           </Box>
-          <Box sx={{ display: 'flex', gap: '16px' }}>
+          {/* <Box sx={{ display: 'flex', gap: '16px' }}>
             <div style={{ width: '300px', height: '56px', border: '1px solid #000', borderRadius: "4px", padding: "16px 5px 16px 24px  " }}>
               <input style={{ width: '100%', outline: "none", }} type="text" placeholder="coupon code" />
             </div>
@@ -203,7 +203,7 @@ const CheckOut = () => {
                 }
               }}>{t('Apply coupon')} </Button>
             </div>
-          </Box>
+          </Box> */}
           <Button variant="outlined" sx={{
             padding: '16px 48px', background: '#DB4444', color: '#fff', border: 'none', borderRadius: '4px', mt: "32px", '&:hover': {
               backgroundColor: "#DB4444",
