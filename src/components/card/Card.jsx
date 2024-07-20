@@ -77,7 +77,7 @@ const Card = ({ el, showDiscount, showRating }) => {
           <Box
             onClick={() => {
               dispatch(removeFromLike(el));
-              toast.error("Item removed from favorite");
+              // toast.error("Удалено из избранных");
             }}
             sx={{
               display: "flex",
@@ -98,7 +98,7 @@ const Card = ({ el, showDiscount, showRating }) => {
           <Box
             onClick={() => {
               dispatch(addToLike(el));
-              toast.success("Item added to favorite");
+              toast.success("Добавлено в избранное");
             }}
             sx={{
               display: "flex",
