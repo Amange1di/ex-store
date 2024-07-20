@@ -1,0 +1,46 @@
+@media(max-width:1024px) {
+    .contactInputs {
+        width: 100px;
+
+        margin-right: 35px;
+    }
+
+    .contactBtn {
+        margin-right: 35px;
+    }
+
+    .text-area {
+        width: 700px !important;
+    }
+
+}
+
+@media(max-width:768px) {
+    .contactInputs {
+        width: 110px !important;
+        margin-right: 35px;
+    }
+
+    .contactBtn {
+        margin-right: 35px;
+    }
+
+    .text-area {
+        width: 440px !important;
+    }
+}
+
+@media(max-width:430px) {
+    .contactInputs {
+        width: 100% !important;
+        margin-right: 35px;
+    }
+
+    .contactBtn {
+        margin-right: 35px;
+    }
+
+    .text-area {
+        width: 100% !important;
+    }
+}

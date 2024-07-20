@@ -3,12 +3,19 @@ import { Box, Container, Typography } from "@mui/material";
 import { BsTelephone } from "react-icons/bs";
 import { RxEnvelopeClosed } from "react-icons/rx";
 import { useTranslation } from "react-i18next";
+import useMediaQuery from '@mui/material/useMediaQuery';
+import { useTheme } from '@mui/material/styles';
+import "./Contact.css"
+
 const Contact = () => {
-    
-const { t, i18n } = useTranslation();
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
+  console.log(isMobile, 'isMobile');
+  const { t } = useTranslation();
+
   return (
-    <div>
-      <Container maxWidth="lg" sx={{display:"flex", gap:"30px", marginTop:"80px"}}>
+    <div style={{paddingBottom:isMobile ? "50px" : "0px"}}>
+      <Container maxWidth="lg" sx={{ display: isMobile ? 'block' : 'flex', gap: "30px", marginTop: "80px" }}>
         <Box
           sx={{
             width: "340px",
@@ -51,7 +58,7 @@ const { t, i18n } = useTranslation();
               }}
               component={"p"}
             >
-             {t('We are available 24/7, 7 days a week.')} 
+              {t('We are available 24/7, 7 days a week.')}
             </Typography>
             <Typography
               sx={{
@@ -63,7 +70,7 @@ const { t, i18n } = useTranslation();
               }}
               component={"p"}
             >
-             {t('Phone: +8801611112222')} 
+              {t('Phone: +8801611112222')}
             </Typography>
           </div>
 
@@ -101,7 +108,7 @@ const { t, i18n } = useTranslation();
               }}
               component={"p"}
             >
-             {t(' Fill out our form and we will contact you within 24 hours.')}
+              {t(' Fill out our form and we will contact you within 24 hours.')}
             </Typography>
             <Typography
               sx={{
@@ -112,77 +119,83 @@ const { t, i18n } = useTranslation();
               }}
               component={"p"}
             >
-            {t('Emails: customer@exclusive.com')}   
+              {t('Emails: customer@exclusive.com')}
             </Typography>
             <Typography
               sx={{ fontSize: "14px", fontWeight: "400", lineHeight: "21px" }}
               component={"p"}
             >
-            {t('Emails: support@exclusive.com')}   
+              {t('Emails: support@exclusive.com')}
             </Typography>
           </div>
         </Box>
 
-        <Box sx={{width:"800px", height:"457px", padding:"40px 32px 40px 31px", boxShadow: "0px 1px 13px 0px #0000000D"}}>
-         <Box sx={{display:"flex", gap:"16px", marginBottom:"32px"}}>
-         <div
-            style={{
-              width: "235px",
-              height: "50px",
-              borderRadius: "4px",
-              background: "#F5F5F5",
-              padding:"13px 3px 13px 16px"
-            }}
-          >
-            <input
-              style={{ outline: "none", width: "100%", background: "#F5F5F5", }}
-              type="text"
-              placeholder=" Your Name *"
-            />
-          </div>
+        <Box sx={{ width: isMobile ? 'auto' : '800px', height: "457px", padding: "40px 32px 40px 31px", boxShadow: "0px 1px 13px 0px #0000000D" }}>
+          <Box sx={{
+            display: "flex",
+            flexDirection: isMobile ? 'column' : 'row',
+            gap: "16px",
+            marginBottom: "32px"
+          }}>
+            <div className="contactInputs"
+              style={{
+                width: "235px",
+                height: "50px",
+                borderRadius: "4px",
+                background: "#F5F5F5",
+                padding: "13px 3px 13px 16px"
+              }}
+            >
+              <input
+                style={{ outline: "none", width: "100%", background: "#F5F5F5", }}
+                type="text"
+                placeholder=" Your Name *"
+              />
+            </div>
 
-          <div
-            style={{
-              width: "235px",
-              height: "50px",
-              borderRadius: "4px",
-              background: "#F5F5F5",
-              padding:"13px 3px 13px 16px"
-            }}
-          >
-            <input
-              style={{ outline: "none", width: "100%", background: "#F5F5F5", }}
-              type="email"
-              placeholder=" Your Email *"
-            />
-          </div>
+            <div className="contactInputs"
+              style={{
+                width: "235px",
+                height: "50px",
+                borderRadius: "4px",
+                background: "#F5F5F5",
+                padding: "13px 3px 13px 16px"
+              }}
+            >
+              <input
+                style={{ outline: "none", width: "100%", background: "#F5F5F5", }}
+                type="email"
+                placeholder=" Your Email *"
+              />
+            </div>
 
-          <div
+            <div className="contactInputs"
+              style={{
+                width: "235px",
+                height: "50px",
+                borderRadius: "4px",
+                background: "#F5F5F5",
+                padding: "13px 3px 13px 16px"
+              }}
+            >
+              <input
+                style={{ outline: "none", width: "100%", background: "#F5F5F5", }}
+                type="text"
+                placeholder=" Your Phone *"
+              />
+            </div>
+          </Box>
+          <textarea
+            className="text-area"
             style={{
-              width: "235px",
-              height: "50px",
-              borderRadius: "4px",
-              background: "#F5F5F5",
-              padding:"13px 3px 13px 16px"
+              width: "737px", height: "207px", background: "#F5F5F5", border: "none", padding: "10px", fontSize: "16px", color: "#333", resize: "none", outline: "none", marginBottom: "32px"
             }}
-          >
-            <input
-              style={{ outline: "none", width: "100%", background: "#F5F5F5", }}
-              type="text"
-              placeholder=" Your Phone *"
-            />
-          </div>
-         </Box>
-         <textarea
-  style={{
-    width: "737px", height: "207px", background: "#F5F5F5", border: "none", padding: "10px", fontSize: "16px",color: "#333",resize: "none",  outline: "none", marginBottom:"32px"
-  }}
-  placeholder="Your message"
-/>
+            placeholder="Your message"
+          />
 
-<div style={{display:"flex", justifyContent:"end"}}>
-<button style={{padding:"16px 48px", background:"#DB4444", color:"#fff", borderRadius:"4px", textAlign:"right"}}>{t('Send Massage')} </button>
-</div>
+          <div style={{ display: "flex", justifyContent: "end" }}>
+            <button className="contactBtn" style={{ padding: "16px 48px", background: "#DB4444", color: "#fff", borderRadius: "4px", textAlign: "right" }}>{t('Send Massage')} </button>
+          </div>
 
         </Box>
       </Container>

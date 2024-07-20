@@ -6,8 +6,16 @@ import Servises from "../assets/Services.svg"
 import Servises1 from "../assets/Services (1).svg"
 import Servises2 from "../assets/Services (2).svg"
 import Servises3 from "../assets/Services (3).svg"
+import "./About.css"
+
+import useMediaQuery from '@mui/material/useMediaQuery';
+import { useTheme } from '@mui/material/styles';
 
 const About = () => {
+
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
+
   const { t } = useTranslation();
   return (
     <div>
@@ -25,14 +33,14 @@ const About = () => {
             </Typography>
           </div>
 
-          <div>
+          <div style={{display: isMobile ? 'none' : 'block'}}>
             <img src={SideImage} alt="Side Image" style={{ width: '100%', height: 'auto' }} />
           </div>
 
 
         </Box>
         <Container style={{ paddingTop: "140px" }}>
-          <div style={{ display: "flex", gap: "30px" }}>
+          <div className='card-about' style={{ display: "flex", gap: "30px" }}>
 
             <div className='blocke' style={{
               width: 270,
@@ -40,7 +48,7 @@ const About = () => {
               borderRadius: "4px",
               border: "1px solid #0000004D",
               padding: "30px 45px 30px 35px",
-
+              
             }}>
               <div style={{
                 width: 200,

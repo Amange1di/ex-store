@@ -3,6 +3,7 @@ import { Container } from "@mui/material";
 import SideImage from "../../assets/sign-up-fon.png";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
+import "./SignUp.css"
 const url = "https://api.escuelajs.co/api/v1/users/";
 
 export default function FormExample({ setIsSuccess }) {
@@ -34,14 +35,20 @@ export default function FormExample({ setIsSuccess }) {
   
     const { t, i18n } = useTranslation();
     return (
+<<<<<<< HEAD
+        <Container maxWidth="lg" sx={{ display: "flex", justifyContent: "space-between", marginTop:"60px", marginLeft:"-25px"}}>
+            <img className='signUpImg' style={{ width: "650px" }} src={SideImage} alt="" />
+            <div className='signUp'>
+=======
         <Container className="container" sx={{ display: "flex", justifyContent: "space-between", margin:"60px auto"}}>
             <img style={{ width: "650px" }} src={SideImage} alt="" />
             <div>
+>>>>>>> d856999772c9ab0b71a1e82de0118fb5128b4213
                 <h2 style={{ fontSize: "36px", fontWeight: "500" }}>{t('Create an account')} </h2>
                 <p className="sm:mx-auto sm:w-full sm:max-w-sm mt-6 text-base leading-9 tracking-tight">
                   {t('Enter your details below')}   
                 </p>
-                <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
+                <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm ">
                     <form style={{ display: "flex", flexDirection: "column", gap: "40px" }} className="space-y-6" onSubmit={handleSubmit}>
                         <div>
                             <label htmlFor="name" className="block text-base font-normal leading-6 text-gray-400"></label>

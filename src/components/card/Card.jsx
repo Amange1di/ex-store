@@ -81,7 +81,7 @@ const Card = ({ el, showDiscount, showRating }) => {
           <Box
             onClick={() => {
               dispatch(removeFromLike(el));
-              toast.error("Item removed from favorite");
+              // toast.error("Удалено из избранных");
             }}
             sx={{
               display: "flex",
@@ -102,7 +102,7 @@ const Card = ({ el, showDiscount, showRating }) => {
           <Box
             onClick={() => {
               dispatch(addToLike(el));
-              toast.success("Item added to favorite");
+              toast.success("Добавлено в избранное");
             }}
             sx={{
               display: "flex",
@@ -139,6 +139,14 @@ const Card = ({ el, showDiscount, showRating }) => {
         sx={{ zIndex: 1 }}
       />
       <button
+  component="img"
+  height="270"
+  width="270"
+  image={images.length > 0 ? images[0].replaceAll("[", '') : def_Img}
+  alt={title}
+  sx={{ zIndex: 1 }}
+/>
+     <button
         className="btnCart"
         onClick={() => {
           dispatch(addItem(el))

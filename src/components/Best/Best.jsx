@@ -1,4 +1,4 @@
-
+// ----
 
 import { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
@@ -88,7 +88,7 @@ const Best = () => {
     <Container maxWidth="lg" sx={{ marginTop: '100px', padding: '0 20px', position: 'relative' }}>
       <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', position: 'absolute', top: '-80px', width: '100%',padding:"0 30px" }}>
         <Typography variant="h4">Лучшие продажи</Typography>
-        <Button
+        <Button className='best-btn'
           onClick={toggleViewProducts}
           variant="contained"
           style={{
@@ -98,6 +98,7 @@ const Best = () => {
             borderRadius: '5px',
             paddingLeft: '20px',
             paddingRight: '20px',
+            marginRight:"60px"
           }}
         >
           {showAllProducts ? 'close' : 'View All'}

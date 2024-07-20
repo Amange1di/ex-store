@@ -1,0 +1,49 @@
+.slider{
+    max-width: 1024px;
+}
+
+.box{
+    display: flex;
+    justify-content: space-between;
+}
+
+
+
+@media (max-width:1024px) {
+    .slider {
+        width: 100%;
+    }
+    .box{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+    .category{
+        display: none;
+    }
+}
+
+@media (max-width:768px) {
+    .slider {
+        width: 100%;
+        grid-template-columns: 1fr;
+    }
+    .box{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+    
+}
+
+@media (max-width: 425px) {
+    .slider {
+        width: 100%;
+        font-size: 10px;
+    }
+    .box{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+}
