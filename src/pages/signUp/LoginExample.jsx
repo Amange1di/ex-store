@@ -1,11 +1,12 @@
 // src/pages/signUp/Login.jsx
 
 import { useDispatch, useSelector } from "react-redux";
-
+import { useTranslation } from "react-i18next";
 import { Link, useNavigate } from "react-router-dom";
 import SideImage from "../../assets/sign-up-fon.png";
 import { loginUser } from "../../redux/slices/userSlice";
 import { useEffect } from "react";
+import { Container } from "@mui/material";
 
 export default function LoginExample() {
   const dispatch = useDispatch();
@@ -26,18 +27,19 @@ export default function LoginExample() {
       }
     });
   };
-
+  
+  const { t, i18n } = useTranslation();
   return (
-    <div className="container m-auto flex" style={{marginTop:"60px"}}>
+    <Container className="container" sx={{ display: "flex", justifyContent: "space-between", margin:"60px auto"}}>
       <img style={{ width: "650px" }} src={SideImage} alt="Side Image" />
       <div className="flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8">
         <div className="sm:mx-auto sm:w-full sm:max-w-sm">
           <h2 className="mt-6 text-4xl font-medium leading-9 tracking-tight text-black-900">
-            Log in to Exclusive
+          {t('  Log in to Exclusive')} 
           </h2>
 
           <p className="mt-6 text-base font-normal leading-9 tracking-tight text-black-900">
-            Enter your details below
+           {t('Enter your details below')}  
           </p>
           {error && <p className="text-red-500">{error}</p>}
         </div>
@@ -59,7 +61,7 @@ export default function LoginExample() {
                   type="email"
                   autoComplete="email"
                   required
-                  placeholder="Email or Phone Number"
+                  placeholder="Email"
                 />
               </div>
             </div>
@@ -91,12 +93,12 @@ export default function LoginExample() {
               <button
                 type="submit"
                 className="flex w-full justify-center rounded-md bg-red-500 px-1 py-4 text-base font-medium leading-6 text-white shadow-sm"              >
-                Log in
+               {t('')}  Log in
               </button>
             </div>
               <div className="text-sm">
                     <a href="#" className="font-normal text-base text-red-500">
-                      Forget password?
+                   {t('Forget password?')}    
                     </a>
                   </div>
            </div>
@@ -106,11 +108,11 @@ export default function LoginExample() {
               to="/form"
               className="font-semibold leading-6 text-indigo-600 hover:text-indigo-500"
             >
-              Registration
+            {t('Registration')}   
             </Link>
           </p>
         </div>
       </div>
-    </div>
+    </Container >
   );
 }

@@ -5,7 +5,7 @@ import { TiDelete } from "react-icons/ti";
 import { removeItem, updateQuantity, updateCart } from "../../redux/slices/cartSlice";
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
-
+import { useTranslation } from "react-i18next";
 const Cart = () => {
   const { items } = useSelector((state) => state.cart);
   const dispatch = useDispatch();
@@ -13,7 +13,8 @@ const Cart = () => {
   const [discount, setDiscount] = useState(0); // State for discount
   const subtotal = items?.reduce((acc, item) => acc + item.price * item.quantity, 0) || 0;
   const total = subtotal - (subtotal * discount);
-
+  
+  const { t, i18n } = useTranslation();
   useEffect(() => {
     dispatch(updateCart());
   }, [dispatch]);
@@ -23,17 +24,17 @@ const Cart = () => {
       <Typography variant="h5" align="center" sx={{ mt: "5px" }}>
         <Breadcrumbs aria-label="breadcrumb" style={{ margin: '80px 1200px 0px 135px' }}>
           <Link underline="hover" color="#7F7F7F" to="/">
-            <p style={{ color: "#7F7F7F" }}>Home</p>
+            <p style={{ color: "#7F7F7F" }}>{t('Home')} </p>
           </Link>
           <Link
             underline="hover"
             color="inherit"
             to="/cart"
           >
-            Cart
+           {t('Cart')}  
           </Link>
         </Breadcrumbs>
-        No Cards
+        {t('No Cards')} 
       </Typography>
     );
   }
@@ -43,9 +44,9 @@ const Cart = () => {
   };
 
   const handleCouponApply = () => {
-    // Replace with your actual coupon logic
+   
     if (couponCode === "www") {
-      setDiscount(0.1); // 10% discount
+      setDiscount(0.3); // 30% discount
     } else {
       setDiscount(0);
       alert("Invalid coupon code");
@@ -64,14 +65,14 @@ const Cart = () => {
     <div>
       <Breadcrumbs aria-label="breadcrumb" style={{ margin: '80px 1200px 0px 135px' }}>
         <Link underline="hover" color="#7F7F7F" to="/">
-          <p style={{ color: "#7F7F7F" }}>Home</p>
+          <p style={{ color: "#7F7F7F" }}>{t('Home')} </p>
         </Link>
         <Link
           underline="hover"
           color="inherit"
           to="/cart"
         >
-          Cart
+         {t('Cart')}  
         </Link>
       </Breadcrumbs>
       <Container maxWidth="lg" sx={{ paddingTop: "180px" }}>
@@ -85,10 +86,10 @@ const Cart = () => {
               boxShadow: "0px 1px 13px 0px #0000000D",
             }}
           >
-            <Box sx={{ width: "400px" }}>Product</Box>
-            <Box sx={{ width: "200px" }}>Price</Box>
-            <Box sx={{ width: "200px" }}>Quantity</Box>
-            <Box sx={{ width: "200px" }}>Subtotal</Box>
+            <Box sx={{ width: "400px" }}>{t('Product')} </Box>
+            <Box sx={{ width: "200px" }}>{t('Price')} </Box>
+            <Box sx={{ width: "200px" }}>{t('Quantity')} </Box>
+            <Box sx={{ width: "200px" }}>{t('Subtotal')} </Box>
           </Box>
           {items.map((item) => (
             <Box
@@ -129,7 +130,7 @@ const Cart = () => {
                   src={item.images[0].replaceAll('["', "").replaceAll('"]', "")}
                   alt="img"
                 />
-                <p style={{ width: "166px" }}>{item.title}</p>
+                <p style={{ width: "166px" }}>{t(item.title)}</p>
               </Box>
               <Box sx={{ width: "200px" }}>$ {item.price}</Box>
               <Box sx={{ width: "200px", display: "flex", justifyContent: "center" }}>
@@ -158,7 +159,7 @@ const Cart = () => {
                 },
               }}
             >
-              Return to Shop
+              {t('Return to Shop')} 
             </Button>
             <Button
               variant="outlined"
@@ -172,7 +173,7 @@ const Cart = () => {
                 },
               }}
             >
-              Update to Cart
+             {t('Update to Cart')}  
             </Button>
           </Box>
         </Box>
@@ -197,26 +198,26 @@ const Cart = () => {
                   },
                 }}
               >
-                Apply coupon
+              {t(' Apply coupon')}  
               </Button>
             </div>
           </Box>
           <Box width={"470px"} sx={{ border: "1px solid #000", padding: "32px 24px" }}>
             <h3 style={{ fontWeight: "500", fontSize: "20px", marginBottom: "24px" }}>Cart Total</h3>
             <Box sx={{ display: "flex", justifyContent: "space-between", paddingBottom: "16px", borderBottom: "1px solid #909090" }}>
-              <p>Shipping</p>
-              <p>free</p>
+              <p>{t('Shipping')} </p>
+              <p>{t('free')} </p>
             </Box>
             <Box sx={{ display: 'flex', justifyContent: 'space-between' }}>
-              <p>Subtotal:</p>
+              <p>{t('Subtotal')} :</p>
               <p style={{ marginBottom: '16px' }}>${subtotal}</p>
             </Box>
             <Box sx={{ display: 'flex', justifyContent: 'space-between' }}>
-              <p>Discount:</p>
+              <p>{t('Discount')} :</p>
               <p style={{ marginBottom: '16px' }}>- ${subtotal * discount}</p>
             </Box>
             <Box sx={{ display: "flex", justifyContent: "space-between", padding: "16px 0", borderBottom: "1px solid #909090" }}>
-              <p>Total:</p>
+              <p>{t('Total')} :</p>
               <p>{total}</p>
             </Box>
             <Box sx={{ display: "flex", justifyContent: "center", marginTop: "16px" }}>
@@ -236,7 +237,7 @@ const Cart = () => {
                   },
                 }}
               >
-                Proceed to checkout
+               {t('Proceed to checkout')}  
               </Button>
             </Box>
           </Box>

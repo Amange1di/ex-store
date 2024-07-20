@@ -3,15 +3,16 @@ import Card from "../../components/card/Card";
 import { useDispatch, useSelector } from "react-redux";
 import { addItem } from "../../redux/slices/cartSlice";
 import { useEffect } from "react";
-
+import { useTranslation } from "react-i18next";
 const Favorite = () => {
   const { items } = useSelector((state) => state.like);
   const dispatch = useDispatch(); // Corrected spelling of dispatch
-
+  
+  const { t, i18n } = useTranslation();
   if (items.length === 0) {
     return (
       <Typography variant="h5" align="center" sx={{ mt: "5px" }}>
-        No Favorites
+        {t('No Favorites')} 
       </Typography>
     );
   }
@@ -28,7 +29,7 @@ const Favorite = () => {
         <Box sx={{ display: "flex", justifyContent: "space-between" }}>
           <Typography variant="h5">WishList({items.length})</Typography>
           <Button onClick={moveAllToBag} variant="contained" sx={{ bgcolor: "red", color: "#fff" }}>
-            Move All To Bag
+          {t('Move All To Bag')}   
           </Button>
         </Box>
 

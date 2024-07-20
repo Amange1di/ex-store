@@ -7,11 +7,12 @@ import "slick-carousel/slick/slick-theme.css";
 import Card from "../card/Card";
 import { GoArrowLeft, GoArrowRight } from "react-icons/go";
 import ReactLoading from 'react-loading';
-
+import { useTranslation } from "react-i18next";
 const Flash = () => {
   const { items, categoryName } = useSelector((store) => store.products);
   const [showAllProducts, setShowAllProducts] = useState(false);
-
+  
+  const { t, i18n } = useTranslation();
   const sliderSettings = {
     dots: false,
     infinite: true,
@@ -27,7 +28,7 @@ const Flash = () => {
       {
         breakpoint: 600,
         settings: {
-          slidesToShow: Math.min(items.length, 3),
+          slidesToShow: Math.min(items.length, 2),
         },
       },
       {
@@ -123,7 +124,7 @@ const Flash = () => {
               margin: "50px auto",
             }}
           >
-            View All Products
+           {t('View All Products')} 
           </button>
         </>
       ) : (
@@ -154,7 +155,7 @@ const Flash = () => {
               margin: "0 auto 50px auto",
             }}
           >
-            Close
+           {t('Close')} 
           </button>
         </>
       )}

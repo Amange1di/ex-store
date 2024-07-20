@@ -4,11 +4,10 @@ import ru from "./locales/ru/ru.json"
 import en from "./locales/en/en.json"
 import kg from "./locales/kg/kg.json"
 
-
 i18n.use(initReactI18next).init({
      resources: {
         ru: {
-            translation: ru
+            translation: ru 
         },
         en: {
             translation: en
@@ -20,8 +19,8 @@ i18n.use(initReactI18next).init({
     lng:"en",
     fallbackLng:"ru",
     interpolation: {
-        escapeValue: false 
+        escapeValue: false
       }
 })
 
-export default i18n
+export default i18n  

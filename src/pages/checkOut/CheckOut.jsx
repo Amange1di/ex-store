@@ -8,7 +8,7 @@ import Visa from "../../assets/Visa.svg";
 import MasterCard from "../../assets/Mastercard.svg";
 import Nagad from "../../assets/Nagad.svg";
 import { Link } from "react-router-dom";
-
+import { useTranslation } from "react-i18next";
 const inputs = [
   { name: "First Name*", required: true },
   { name: "Company Name", required: true },
@@ -24,7 +24,8 @@ const CheckOut = () => {
   const dispatch = useDispatch();
   const subtotal = items?.reduce((prev, next) => prev + next.price * next.quantity, 0) || 0;
   const total = subtotal - (subtotal * 0.1);
-
+  
+  const { t, i18n } = useTranslation();
   const [selectedPayment, setSelectedPayment] = useState("");
   const [formValues, setFormValues] = useState({});
   const [formErrors, setFormErrors] = useState({});
@@ -71,7 +72,7 @@ const CheckOut = () => {
           <p style={{ color: "#7F7F7F" }}>Cart</p>
         </Link>
         <Link underline="hover" color="inherit" to="/checkOut">
-          CheckOut
+        {t('CheckOut')}  
         </Link>
       </Breadcrumbs>
       <Container maxWidth="lg" sx={{ display: 'flex', justifyContent: "space-between", alignItems: "center", marginTop: "180px" }}>
@@ -83,7 +84,7 @@ const CheckOut = () => {
               paddingBottom: "48px",
             }}
           >
-            Billing Details
+          {t('Billing Details')}   
           </h1>
 
           {inputs.map((input, index) => (
@@ -154,11 +155,11 @@ const CheckOut = () => {
             ))}
 
             <Box sx={{ display: "flex", justifyContent: "space-between", paddingBottom: '16px', borderBottom: '1px solid #909090' }}>
-              <p>Shipping</p>
-              <p>free</p>
+              <p>{t('Shipping')} </p>
+              <p>{t('free')} </p>
             </Box>
             <Box sx={{ display: "flex", justifyContent: "space-between", padding: '16px 0', borderBottom: '1px solid #909090' }}>
-              <p>Total: </p>
+              <p>{t('Total')} : </p>
               <p>{total}</p>
             </Box >
             <Box sx={{ display: "flex", justifyContent: "space-between", marginTop: "32px" }}>
@@ -170,7 +171,7 @@ const CheckOut = () => {
                   checked={selectedPayment === 'bank'}
                   onChange={handlePaymentChange}
                 />
-                <p>Bank</p>
+                <p>{t('Bank')} </p>
               </div>
               <div style={{ display: "flex", gap: "8px" }}>
                 <img src={Bcash} alt="Bcash" />
@@ -187,10 +188,10 @@ const CheckOut = () => {
                 checked={selectedPayment === 'cash'}
                 onChange={handlePaymentChange}
               />
-              <p style={{ }}>Cash on delivery</p>
+              <p style={{ }}>{t('Cash on delivery')} </p>
             </Box>
           </Box>
-          <Box sx={{ display: 'flex', gap: '16px' }}>
+          {/* <Box sx={{ display: 'flex', gap: '16px' }}>
             <div style={{ width: '300px', height: '56px', border: '1px solid #000', borderRadius: "4px", padding: "16px 5px 16px 24px  " }}>
               <input style={{ width: '100%', outline: "none", }} type="text" placeholder="coupon code" />
             </div>
@@ -200,9 +201,9 @@ const CheckOut = () => {
                   backgroundColor: "#DB4444",
                   border: "none"
                 }
-              }}>Apply coupon</Button>
+              }}>{t('Apply coupon')} </Button>
             </div>
-          </Box>
+          </Box> */}
           <Button variant="outlined" sx={{
             padding: '16px 48px', background: '#DB4444', color: '#fff', border: 'none', borderRadius: '4px', mt: "32px", '&:hover': {
               backgroundColor: "#DB4444",
@@ -210,7 +211,7 @@ const CheckOut = () => {
             }
           }}
             onClick={handlePlaceOrder}
-          >Place Order</Button>
+          >{t('Place Order')} </Button>
         </Box>
       </Container>
     </div>

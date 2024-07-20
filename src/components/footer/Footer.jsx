@@ -7,16 +7,18 @@ import { FaInstagram, FaFacebookF, FaLinkedinIn } from "react-icons/fa";
 import { FiTwitter } from "react-icons/fi";
 import { Container } from "@mui/material";
 import { NavLink } from "react-router-dom";
-
+import { useTranslation } from "react-i18next";
 const Footer = () => {
+    
+const { t, i18n } = useTranslation();
   return (
     <div className="w-full bg-black p-8 sm:p-12 mt-20">
       <Container maxWidth="lg" sx={{ p: "0px" }}>
         <div className="flex flex-wrap items-start justify-between space-y-8 sm:space-y-0">
           <div className="w-full sm:w-auto">
             <h3 className="text-white text-2xl">Exclusive</h3>
-            <h4 className="text-white text-xl mt-4">Subscribe</h4>
-            <p className="text-white mt-4">Get 10% off your first order</p>
+            <h4 className="text-white text-xl mt-4">{t('Subscribe')} </h4>
+            <p className="text-white mt-4">{t('Get 10% off your first order')} </p>
             <div className="flex mt-2">
               <input
                 type="email"
@@ -33,46 +35,46 @@ const Footer = () => {
           </div>
 
           <div className="w-full sm:w-auto">
-            <h4 className="text-white text-2xl">Support</h4>
+            <h4 className="text-white text-2xl">{t('Support')} </h4>
             <p className="text-white mt-4">
-              111 Bijoy Sarani, Dhaka, <br /> DH 1515, Bangladesh.
+            111 Bijoy Sarani, Dhaka, <br /> DH 1515, Bangladesh.  
             </p>
-            <p className="text-white mt-1">exclusive@gmail.com</p>
-            <p className="text-white mt-1">+88015-88888-9999</p>
+            <p className="text-white mt-1"> exclusive@gmail.com</p>
+            <p className="text-white mt-1"> +88015-88888-9999</p>
           </div>
 
           <div className="w-full sm:w-auto">
             <h4 className="text-white text-2xl">Account</h4>
             <NavLink to="/profile" className="text-white block mt-4">
-              My Account
+             {t('My Account')}  
             </NavLink>
             <NavLink to="/login" className="text-white block">
-              Login / Register
+             {t('Login / Register')}  
             </NavLink>
             <NavLink to="/cart" className="text-white block">
-              Cart
+            {t('Cart')}   
             </NavLink>
             <NavLink to="/favorite" className="text-white block">
-              Wishlist
+            {t(' Wishlist')}  
             </NavLink>
             <NavLink to="/" className="text-white block">
-              Shop
+           {t(' Shop')}   
             </NavLink>
           </div>
 
           <div className="w-full sm:w-auto">
             <h4 className="text-white text-2xl">Quick Link</h4>
             <a href="#" className="text-white block mt-4">
-              Privacy Policy
+           {t('Privacy Policy')}    
             </a>
             <a href="#" className="text-white block">
-              Terms Of Use
+            {t(' Terms Of Use')}  
             </a>
             <a href="#" className="text-white block">
-              FAQ
+            {t('FAQ')}   
             </a>
             <NavLink to="/contact" className="text-white block">
-              Contact
+            {t('Contact')}   
             </NavLink>
           </div>
 
@@ -110,7 +112,7 @@ const Footer = () => {
         </div>
         <hr className="mt-20 border-gray-700" />
         <p className="text-white text-center mt-4">
-          Copyright Rimel 2022. All rights reserved.
+         {t('Copyright Rimel 2022. All rights reserved.')}  
         </p>
       </Container>
     </div>

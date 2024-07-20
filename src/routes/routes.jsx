@@ -12,6 +12,7 @@ import LoginExample from "../pages/signUp/LoginExample";
 import SignUp from "../pages/signUp/SignUp";
 import MyAccount from "../pages/MyAccount/MyAccount";
 import Profile from "../components/profile1/Profile";
+import { useSelector } from "react-redux";
 
 const menu = [
   {
@@ -78,6 +79,7 @@ const menu = [
 ];
 
 const AppRoutes = () => {
+  const {user} = useSelector((store) => store.user)
   return (
     <Routes>
       {menu.map((route) => (
@@ -87,6 +89,13 @@ const AppRoutes = () => {
           element={<route.component />}
         />
       ))}
+       
+        {/* Если пользователь не авторизован, показываем маршрут signup */}
+        {!user && <Route path="/signup" component={SignUp} />}
+        {/* Другие маршруты */}
+        <Route path="/profile" component={Profile} />
+        {/* И так далее... */}
+     
       <Route path="*" element={<NotFoundPage />} />
     </Routes>
   );

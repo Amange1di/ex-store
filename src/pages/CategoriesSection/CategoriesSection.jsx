@@ -6,7 +6,7 @@ import { BsSmartwatch } from 'react-icons/bs';
 import { FiHeadphones } from 'react-icons/fi';
 import { BsPhoneLandscape } from 'react-icons/bs';
 import { AiOutlineCamera } from 'react-icons/ai';
-
+import { useTranslation } from "react-i18next";
 const CateSection = [
     { id: 1, name: "Phones", icon: <HiOutlineDeviceMobile /> },
     { id: 2, name: "Computers", icon: <HiOutlineDesktopComputer /> },
@@ -17,6 +17,8 @@ const CateSection = [
 ];
 
 const CategoriesSection = () => {
+      
+const { t, i18n } = useTranslation();
     const [activeCategory, setActiveCategory] = useState(null);
 
     const handleCategoryClick = (categoryId) => {
@@ -49,7 +51,7 @@ const CategoriesSection = () => {
                         {category.icon}
                     </Typography>
                     <Typography variant="h5" style={{ color: activeCategory === category.id ? "#fff" : "#000", marginTop: "10px", textAlign: "center" }}>
-                        {category.name}
+                        {t(category.name)}
                     </Typography>
                 </Box>
             ))}
