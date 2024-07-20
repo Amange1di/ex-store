@@ -26,7 +26,7 @@ const Favorite = () => {
   return (
     <div>
       <Container maxWidth="lg">
-        <Box sx={{ display: "flex", justifyContent: "space-between" }}>
+        <Box sx={{ display: "flex", justifyContent: "space-between" ,marginTop:"100px"}}>
           <Typography variant="h5">WishList({items.length})</Typography>
           <Button onClick={moveAllToBag} variant="contained" sx={{ bgcolor: "red", color: "#fff" }}>
           {t('Move All To Bag')}   

@@ -40,8 +40,7 @@ const App = () => {
             color={"#fff"}
             sx={{ flexGrow: 1 }}
           >
-            Summer Sale For All Swim Suits And Free Express Delivery - OFF 50%!
-            ShopNow
+            {t("Summer Sale For All Swim Suits And Free Express Delivery - OFF 50%!ShopNow")}
           </Typography>
 
           <select

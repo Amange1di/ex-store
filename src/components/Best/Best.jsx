@@ -36,7 +36,7 @@ const Best = () => {
       {
         breakpoint: 600,
         settings: {
-          slidesToShow: Math.min(items.length, 3),
+          slidesToShow: Math.min(items.length, 2),
         },
       },
       {
@@ -86,7 +86,7 @@ const Best = () => {
 
   return (
     <Container maxWidth="lg" sx={{ marginTop: '100px', padding: '0 20px', position: 'relative' }}>
-      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', position: 'absolute', top: '-80px', width: '100%' }}>
+      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', position: 'absolute', top: '-80px', width: '100%',padding:"0 30px" }}>
         <Typography variant="h4">Лучшие продажи</Typography>
         <Button
           onClick={toggleViewProducts}

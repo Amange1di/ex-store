@@ -58,7 +58,7 @@ const Hero = () => {
       console.log(data, "---data---");
       setCategories(data.slice(0, 8));
       dispatch(
-        fetchProductsByCategory({ id: data[0]?.id, name: data[0]?.name })
+        fetchProductsByCategory({ id: data[4]?.id, name: data[4]?.name })
       );
     };
     // dispatch(fetch....());

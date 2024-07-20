@@ -20,10 +20,14 @@ import { useMemo } from "react";
 
 const def_Img = "https://mui.com/static/images/cards/paella.jpg";
 
-const a  = "\\"
+const a = "\\"
 
 const Card = ({ el, showDiscount, showRating }) => {
   const { title, images, price, id } = el;
+  let url = images[0]
+
+  console.log(url.startsWith('[') ? JSON.parse(url)[0] : url);
+
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const discount = 30; // скидка
@@ -43,7 +47,7 @@ const Card = ({ el, showDiscount, showRating }) => {
   return (
     <MuiCard
       className="Cart"
-      sx={{ margin: "20px", position: "relative", width: 270 }}
+      sx={{ margin: "20px", position: "relative", width: 270, height: 400 }}
     >
       <Box
         sx={{
@@ -126,14 +130,15 @@ const Card = ({ el, showDiscount, showRating }) => {
         sx={{ zIndex: 1 }}
       /> */}
       <CardMedia
-  component="img"
-  height="250 "
-  width="270"
-  image={images.length > 0 ? images[0].replace("[\\]", '') : def_Img}
-  alt={title}
-  sx={{ zIndex: 1 }}
-/>
-     <button
+        component="img"
+        height="250 "
+        width="270"
+        image={url.startsWith('[') ? JSON.parse(url)[0] : url}
+        alt={JSON.stringify(url)}
+        title={JSON.stringify(url)}
+        sx={{ zIndex: 1 }}
+      />
+      <button
         className="btnCart"
         onClick={() => {
           dispatch(addItem(el))
@@ -205,7 +210,7 @@ const Card = ({ el, showDiscount, showRating }) => {
               <FaStar />
               <FaStarHalfAlt />
               <b style={{ marginLeft: "20px", color: "grey" }}>
-             ({ratingValue})
+                ({ratingValue})
               </b>
             </Box>
           )}
