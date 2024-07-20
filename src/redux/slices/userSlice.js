@@ -1,4 +1,3 @@
-// src/slices/userSlice.js
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 
@@ -28,22 +27,26 @@ export const loginUser = createAsyncThunk(
   }
 );
 
+export const logoutUser = createAsyncThunk('user/logoutUser', async () => {
+  localStorage.removeItem('user');
+  localStorage.removeItem('token');
+  return null;
+});
+
+const initialState = {
+  user: null,
+  isSuccess: false,
+  isLoading: false,
+  error: null,
+};
+
 const userSlice = createSlice({
   name: 'user',
-  initialState: {
-    user: JSON.parse(localStorage.getItem('user')) || null,
-    isSuccess: false,
-    isLoading: false,
-    error: null,
-  },
+  initialState,
   reducers: {
-    logoutUser: (state) => {
-      state.user = null;
-      state.isSuccess = false;
-      state.isLoading = false;
-      state.error = null;
-      localStorage.removeItem('token');
-      localStorage.removeItem('user');
+    setUser: (state, action) => {
+      state.user = action.payload;
+      state.isSuccess = !!action.payload;
     },
   },
   extraReducers: (builder) => {
@@ -53,18 +56,25 @@ const userSlice = createSlice({
         state.error = null;
       })
       .addCase(loginUser.fulfilled, (state, action) => {
-        state.user = action.payload;
-        state.isSuccess = true;
         state.isLoading = false;
+        state.isSuccess = true;
+        state.user = action.payload;
+        state.error = null;
       })
       .addCase(loginUser.rejected, (state, action) => {
-        state.error = action.payload;
         state.isLoading = false;
+        state.isSuccess = false;
+        state.error = action.payload;
+      })
+      .addCase(logoutUser.fulfilled, (state) => {
+        state.user = null;
+        state.isSuccess = false;
+        state.isLoading = false;
+        state.error = null;
       });
   },
 });
 
-export const { logoutUser } = userSlice.actions;
+export const { setUser } = userSlice.actions;
 
 export default userSlice.reducer;
-

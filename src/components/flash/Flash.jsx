@@ -28,7 +28,7 @@ const Flash = () => {
       {
         breakpoint: 600,
         settings: {
-          slidesToShow: Math.min(items.length, 3),
+          slidesToShow: Math.min(items.length, 2),
         },
       },
       {
