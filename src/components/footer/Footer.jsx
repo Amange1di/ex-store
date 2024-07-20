@@ -8,12 +8,14 @@ import { FiTwitter } from "react-icons/fi";
 import { Container } from "@mui/material";
 import { NavLink } from "react-router-dom";
 import { useTranslation } from "react-i18next";
+import "./Footer.css"
+
 const Footer = () => {
-    
-const { t, i18n } = useTranslation();
+
+  const { t, i18n } = useTranslation();
   return (
     <div className="w-full bg-black p-8 sm:p-12 mt-20">
-      <Container maxWidth="lg" sx={{ p: "0px" }}>
+      <Container className="footer" maxWidth="lg" sx={{ p: "0px" }}>
         <div className="flex flex-wrap items-start justify-between space-y-8 sm:space-y-0">
           <div className="w-full sm:w-auto">
             <h3 className="text-white text-2xl">Exclusive</h3>
@@ -37,7 +39,7 @@ const { t, i18n } = useTranslation();
           <div className="w-full sm:w-auto">
             <h4 className="text-white text-2xl">{t('Support')} </h4>
             <p className="text-white mt-4">
-            {t(' 111 Bijoy Sarani, Dhaka, <br /> DH 1515, Bangladesh.')}  
+              {t(' 111 Bijoy Sarani, Dhaka, <br /> DH 1515, Bangladesh.')}
             </p>
             <p className="text-white mt-1"> exclusive@gmail.com</p>
             <p className="text-white mt-1"> +88015-88888-9999</p>
@@ -46,38 +48,37 @@ const { t, i18n } = useTranslation();
           <div className="w-full sm:w-auto">
             <h4 className="text-white text-2xl">Account</h4>
             <NavLink to="/profile" className="text-white block mt-4">
-             {t('My Account')}  
+              {t('My Account')}
             </NavLink>
             <NavLink to="/login" className="text-white block">
-             {t('Login / Register')}  
+              {t('Login / Register')}
             </NavLink>
             <NavLink to="/cart" className="text-white block">
-            {t('Cart')}   
+              {t('Cart')}
             </NavLink>
             <NavLink to="/favorite" className="text-white block">
-            {t(' Wishlist')}  
+              {t(' Wishlist')}
             </NavLink>
             <NavLink to="/" className="text-white block">
-           {t(' Shop')}   
+              {t(' Shop')}
             </NavLink>
           </div>
 
           <div className="w-full sm:w-auto">
             <h4 className="text-white text-2xl">Quick Link</h4>
             <a href="#" className="text-white block mt-4">
-           {t('Privacy Policy')}    
+              {t('Privacy Policy')}
             </a>
             <a href="#" className="text-white block">
-            {t(' Terms Of Use')}  
+              {t(' Terms Of Use')}
             </a>
             <a href="#" className="text-white block">
-            {t('FAQ')}   
+              {t('FAQ')}
             </a>
             <NavLink to="/contact" className="text-white block">
-            {t('Contact')}   
+              {t('Contact')}
             </NavLink>
           </div>
-
           <div className="w-full sm:w-auto">
             <h4 className="text-white text-2xl">Download App</h4>
             <p className="text-white mt-4">Save $3 with App New User Only</p>
@@ -112,7 +113,7 @@ const { t, i18n } = useTranslation();
         </div>
         <hr className="mt-20 border-gray-700" />
         <p className="text-white text-center mt-4">
-         {t('Copyright Rimel 2022. All rights reserved.')}  
+          {t('Copyright Rimel 2022. All rights reserved.')}
         </p>
       </Container>
     </div>

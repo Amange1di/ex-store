@@ -1,0 +1,27 @@
+@media(max-width: 1024px){
+    .signUpImg{
+        display: none;
+    }
+    .signUp{
+        margin-left: 35%;
+        justify-content: center;
+    }
+}
+@media(max-width: 769px){
+    .signUpImg{
+        display: none;
+    }
+    .signUp{
+        margin-left: 30%;
+        justify-content: center;
+    }
+}
+@media(max-width: 430px){
+    .signUpImg{
+        display: none;
+    }
+    .signUp{
+        margin-left: 10%;
+        /* justify-content: center; */
+    }
+}

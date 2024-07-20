@@ -16,6 +16,7 @@ import apple_icon from "../../assets/apple_icon.svg";
 import { useDispatch } from "react-redux";
 import { fetchProductsByCategory } from "../../redux/slices/productsSlice";
 import { useTranslation } from "react-i18next";
+import "./Hero.css"
 
 const fakeData = [
   {
@@ -51,7 +52,7 @@ const Hero = () => {
     slidesToShow: 1,
     slidesToScroll: 1,
   };
-  
+
   useEffect(() => {
     const getCategories = async () => {
       const { data } = await storeService.getAllCategories();
@@ -70,26 +71,28 @@ const Hero = () => {
   };
 
   return (
-    <div>
-      <Container maxWidth="lg" sx={{ display: "flex" }}>
-        <Box
-          sx={{
-            minWidth: "265px",
-            borderRight: "0.5px solid #000000",
-          }}
-        >
-          <List sx={{ width: "100%", bgcolor: "background.paper" }}>
-            {categories?.map((el) => (
-              <ListItem sx={{ cursor: "pointer" }} key={el.id}>
-                <ListItemText
-                  onClick={() => handleListItemClick(el.id, el.name)}
-                  primary={`${t(el.name)}`}
+    <Container maxWidth="lg" sx={{ display: "flex" }}>
+      <div className="box">
+        <div className="category">
+          <Box
+            sx={{
+              minWidth: "265px",
+              borderRight: "0.5px solid #000000",
+            }}
+          >
+            <List sx={{ width: "100%", bgcolor: "background.paper" }}>
+              {categories?.map((el) => (
+                <ListItem sx={{ cursor: "pointer" }} key={el.id}>
+                  <ListItemText
+                    onClick={() => handleListItemClick(el.id, el.name)}
+                    primary={`${t(el.name)}`}
                   // secondary={`${t(el.name)}`}
-                />
-              </ListItem>
-            ))}
-          </List>
-        </Box>
+                  />
+                </ListItem>
+              ))}
+            </List>
+          </Box>
+        </div>
         <Box
           sx={{
             width: "73%",
@@ -99,7 +102,8 @@ const Hero = () => {
             marginTop: "40px",
           }}
         >
-          <Slider {...settings}>
+
+          <Slider className="slider" {...settings}>
             {fakeData.map((promo, index) => (
               <div key={index}>
                 <Box
@@ -154,8 +158,8 @@ const Hero = () => {
             ))}
           </Slider>
         </Box>
-      </Container>
-    </div>
+      </div>
+    </Container>
   );
 };
 

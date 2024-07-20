@@ -5,6 +5,7 @@ import { Container, Button, Typography, Grid } from '@mui/material'; // Импо
 import Card from '../card/Card';
 import ReactLoading from "react-loading"
 
+
 const BestTwo = () => {
   const dispatch = useDispatch();
   const { items, isLoading, isError } = useSelector((state) => state.productsAll);
@@ -55,7 +56,8 @@ const BestTwo = () => {
   return (
     <Container maxWidth="lg" sx={{ marginTop: '100px', padding: '0 20px', position: 'relative' }}>
       <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', position: 'absolute', top: '-80px', width: '100%' }}>
-        <Typography variant="h4">Лучшие Лучшие </Typography>
+        <Typography variant="h4">Лучшие Лучшие  </Typography>
+        
        
       </div>
       {showAllProducts ? (

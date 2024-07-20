@@ -92,7 +92,7 @@ useEffect(() => {
   return (
     <AppBar position="static" sx={{ bgcolor: "#fff", pt:"40px",pb:"16px"  , borderBottom:"1px solid rgba(0, 0, 0, 1) " }} elevation={0} >
       <Container maxWidth="lg" sx={{p:"0px"}}>
-        <Toolbar sx={{ bgcolor: "#fff",p:"0px" }}>
+        <Toolbar  sx={{ bgcolor: "#fff",p:"0px", border:"1px solid" }}>
           <Typography
             variant="h6"
             noWrap
@@ -103,7 +103,6 @@ useEffect(() => {
               display: { xs: "none", md: "flex" },
               fontFamily: "monospace",
               fontWeight: 700,
-              // letterSpacing: '.3rem',
               color: "#000",
               textDecoration: "none",
             }}

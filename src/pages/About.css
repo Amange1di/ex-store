@@ -1,0 +1,6 @@
+@media(max-width: 1024px){
+    .card-about{
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
