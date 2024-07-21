@@ -46,7 +46,7 @@ const Cart = () => {
   const handleCouponApply = () => {
    
     if (couponCode === "www") {
-      setDiscount(0.3); // 30% discount
+      setDiscount(0.1); // 10% discount
     } else {
       setDiscount(0);
       alert("Invalid coupon code");

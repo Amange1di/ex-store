@@ -1,17 +1,18 @@
 .slider{
-    max-width: 1024px;
+    max-width: 924px;
+
 }
 
 .box{
     display: flex;
-    justify-content: space-between;
+    gap: 50px;
 }
 
 
 
 @media (max-width:1024px) {
     .slider {
-        width: 100%;
+        width: 70%;
     }
     .box{
         width: 100%;

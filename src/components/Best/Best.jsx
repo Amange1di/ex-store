@@ -30,11 +30,11 @@ const Best = () => {
       {
         breakpoint: 1024,
         settings: {
-          slidesToShow: Math.min(items.length, 4),
+          slidesToShow: Math.min(items.length, 3),
         },
       },
       {
-        breakpoint: 600,
+        breakpoint: 900,
         settings: {
           slidesToShow: Math.min(items.length, 2),
         },
@@ -98,7 +98,8 @@ const Best = () => {
             borderRadius: '5px',
             paddingLeft: '20px',
             paddingRight: '20px',
-            marginRight:"60px"
+            marginRight:"60px",
+            width:"150px"
           }}
         >
           {showAllProducts ? 'close' : 'View All'}

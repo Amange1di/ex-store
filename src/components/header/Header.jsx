@@ -97,11 +97,11 @@ const Header = () => {
   );
 
   return (
-<<<<<<< HEAD
+
     <AppBar position="static" sx={{ bgcolor: "#fff", pt:"40px",pb:"16px"  , borderBottom:"1px solid rgba(0, 0, 0, 1) " }} elevation={0} >
       <Container maxWidth="lg" sx={{p:"0px"}}>
         <Toolbar  sx={{ bgcolor: "#fff",p:"0px", border:"1px solid" }}>
-=======
+{/* =======
     <AppBar
       position="static"
       sx={{
@@ -114,8 +114,8 @@ const Header = () => {
     >
       <Container maxWidth="lg" sx={{ p: "0px" }}>
         <Toolbar sx={{ bgcolor: "#fff", p: "0px" }}>
->>>>>>> d856999772c9ab0b71a1e82de0118fb5128b4213
-          <Typography
+>>>>>>> d856999772c9ab0b71a1e82de0118fb5128b4213*/}
+          <Typography 
             variant="h6"
             noWrap
             component="a"
@@ -141,7 +141,9 @@ const Header = () => {
               onClick={handleOpenNavMenu}
               color="inherit"
             >
-              <MenuIcon />
+              <MenuIcon style={{
+                  color:"#000"
+                }} />
             </IconButton>
             <Menu
               id="menu-appbar"
@@ -163,7 +165,7 @@ const Header = () => {
             >
               {headerMenu.map((page) => (
                 <MenuItem key={page.name} onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center">{t(page.name)}</Typography>
+                  <Typography component={"a"}  to={page.path} textAlign="center">{t(page.name)}</Typography>
                 </MenuItem>
               ))}
             </Menu>

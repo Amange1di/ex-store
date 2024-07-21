@@ -95,11 +95,11 @@ const Hero = () => {
         </div>
         <Box
           sx={{
-            width: "73%",
+            width: "63%",
             height: "344px",
             bgcolor: "black",
-            marginLeft: "45px",
-            marginTop: "40px",
+            // marginLeft: "-45px",
+            marginTop: "20px",
           }}
         >
 

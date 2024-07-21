@@ -31,9 +31,3 @@ input{
     height: 400px !important;
   }
 }
-@media (max-width: 576px) {
-  .Cart{
-    width: 150px !important;
-    height: 200px !important;
-  }
-}

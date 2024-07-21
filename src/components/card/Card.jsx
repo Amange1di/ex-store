@@ -26,7 +26,7 @@ const Card = ({ el, showDiscount, showRating }) => {
   const { title, images, price, id } = el;
   let url = images[0]
 
-  console.log(url.startsWith('[') ? JSON.parse(url)[0] : url);
+  // console.log(url.startsWith('[') ? JSON.parse(url)[0] : url);
 
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -47,7 +47,7 @@ const Card = ({ el, showDiscount, showRating }) => {
   return (
     <MuiCard
       className="Cart"
-      sx={{ margin: "20px", position: "relative", width: 270, height: 400 }}
+      sx={{ margin: "20px", position: "relative", width: 270,height:450}}
     >
       <Box
         sx={{
@@ -121,15 +121,15 @@ const Card = ({ el, showDiscount, showRating }) => {
           </Box>
         )}
       </Box>
-      {/* <CardMedia
+      <CardMedia
         component="img"
         height="250"
         width="270"
         image={images[0]?.length > 0 ? images[0].replace(/["]/, '') : def_Img}
         alt={title}
         sx={{ zIndex: 1 }}
-      /> */}
-      <CardMedia
+      />
+      {/* <CardMedia
         component="img"
         height="250 "
         width="270"
@@ -137,7 +137,7 @@ const Card = ({ el, showDiscount, showRating }) => {
         alt={JSON.stringify(url)}
         title={JSON.stringify(url)}
         sx={{ zIndex: 1 }}
-      />
+      /> */}
       <button
   component="img"
   height="270"

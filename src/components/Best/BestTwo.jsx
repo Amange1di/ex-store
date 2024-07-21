@@ -12,7 +12,7 @@ const BestTwo = () => {
   const [randomItems, setRandomItems] = useState([]);
 
   const shuffleArray = (array) => {
-    return [...array].sort(() => 0.5 - Math.random());
+    return [...array].sort(() => 1.5 - Math.random());
   };
 
   useEffect(() => {
@@ -32,7 +32,7 @@ const BestTwo = () => {
   if (isLoading) {
     return (
       <Container maxWidth="lg" sx={{ marginTop: '100px', padding: '0 20px', position: 'relative' }}>
-        <Typography variant="h4">Лучшие продажи</Typography>
+        <Typography variant="h4">Разное</Typography>
         <Typography variant="subtitle1" sx={{ marginTop: '20px', textAlign: 'center' }}>
           <ReactLoading type="spinningBubbles" color="#000000" />
           Loading...
@@ -54,11 +54,11 @@ const BestTwo = () => {
   return (
     <Container maxWidth="lg" sx={{ marginTop: '100px', padding: '0 20px', position: 'relative' }}>
       <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', position: 'absolute', top: '-80px', width: '100%' }}>
-        <Typography variant="h4">Лучшие Лучшие</Typography>
+        <Typography variant="h4">Разное</Typography>
       
       </div>
       <Grid container spacing={3} style={{ marginTop: '50px' }}>
-        {randomItems.slice(0, showAllProducts ? randomItems.length : 9).map((el) => (
+        {randomItems.slice(0, showAllProducts ? randomItems.length : 6).map((el) => (
           <Grid item xs={12} sm={6} md={4} key={el?.id}>
             <Card el={el} showDiscount={false} showRating={true} />
           </Grid>

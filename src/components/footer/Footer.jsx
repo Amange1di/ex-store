@@ -39,11 +39,8 @@ const Footer = () => {
           <div className="w-full sm:w-auto">
             <h4 className="text-white text-2xl">{t('Support')} </h4>
             <p className="text-white mt-4">
-<<<<<<< HEAD
-              {t(' 111 Bijoy Sarani, Dhaka, <br /> DH 1515, Bangladesh.')}
-=======
-            111 Bijoy Sarani, Dhaka, <br /> DH 1515, Bangladesh.  
->>>>>>> d856999772c9ab0b71a1e82de0118fb5128b4213
+               111 Bijoy Sarani, Dhaka, <br /> DH 1515, Bangladesh.
+           
             </p>
             <p className="text-white mt-1"> exclusive@gmail.com</p>
             <p className="text-white mt-1"> +88015-88888-9999</p>

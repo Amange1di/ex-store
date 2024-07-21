@@ -22,11 +22,11 @@ const Flash = () => {
       {
         breakpoint: 1024,
         settings: {
-          slidesToShow: Math.min(items.length, 4),
+          slidesToShow: Math.min(items.length, 3),
         },
       },
       {
-        breakpoint: 600,
+        breakpoint: 900,
         settings: {
           slidesToShow: Math.min(items.length, 2),
         },
